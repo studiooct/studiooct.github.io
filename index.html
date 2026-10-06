@@ -1,14 +1,134 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>스타트업 키우기</title><link rel="stylesheet" href="style.css"></head>
-<body><main>
-<div class="card">
-  <h1>스타트업 키우기</h1>
-  <p>야옹이와 함께 키우는 나의 작은 회사. 주마다 팀에 일을 맡기고, 제품을 만들고, 회사를 키워 가는 느긋한 경영 게임이에요.</p>
-  <p class="soft">곧 Google Play에 출시돼요.</p>
-</div>
-<div class="card">
-  <nav><a href="privacy.html">개인정보처리방침</a><a href="support.html">문의</a></nav>
-</div>
-<p class="soft">© 2026 Studio Oct</p>
-</main></body></html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스타트업 키우기 — 고양이 대표와 키우는 나의 작은 회사</title>
+<meta name="description" content="한 주에 한 번, 팀에 일을 맡기고 제품을 만들고 회사를 키워 가는 느긋한 경영 게임. Studio Oct가 만들고 있어요.">
+<meta property="og:title" content="스타트업 키우기">
+<meta property="og:description" content="고양이 대표와 함께, 한 주씩 키우는 나의 작은 회사">
+<meta property="og:image" content="https://studiooct.github.io/img/office.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/cat.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./"><img src="img/cat.png" alt="" class="px"> Studio Oct</a>
+    <nav><a href="#features">게임 소개</a><a href="#gallery">화면</a><a href="support.html">문의</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <span class="badge">곧 Google Play 출시</span>
+        <h1 class="title">스타트업<br>키우기</h1>
+        <p class="lead">고양이 대표와 함께,<br>한 주씩 키우는 나의 작은 회사.</p>
+        <p class="sub">고시원 사무실에서 시작해 직원을 뽑고, 제품을 만들고, 세계로 나가요. 쫓기지 않고 내 속도로.</p>
+        <ul class="tags"><li>주간 경영</li><li>느긋한 방치형</li><li>픽셀 아트</li></ul>
+      </div>
+      <div class="hero-phone">
+        <div class="phone"><img src="img/office.jpg" alt="직원들이 책상에서 일하는 사무실 화면"></div>
+        <div class="sticker">오늘도 화이팅!</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="wrap">
+      <h2 class="section-title">이런 게임이에요</h2>
+
+      <article class="feature">
+        <div class="phone small"><img src="img/weekly.jpg" alt="제품마다 개발팀과 홍보팀을 배정하는 주간업무 화면" loading="lazy"></div>
+        <div class="feature-text">
+          <span class="num">01</span>
+          <h3>한 주의 계획, 버튼 하나</h3>
+          <p>제품마다 개발팀과 홍보팀을 정하고 <b>업무 시작!</b>을 누르면 한 주가 흘러가요. 업데이트, 홍보, 해외 진출까지 판 하나에서 다 해요.</p>
+        </div>
+      </article>
+
+      <article class="feature flip">
+        <div class="shots">
+          <img class="shot" src="img/meeting.jpg" alt="대표 고양이와 직원이 마주 앉은 1:1 면담 장면" loading="lazy">
+          <img class="shot" src="img/newstaff.jpg" alt="새 마케팅 직원 합류, 홍보 효과 두 배" loading="lazy">
+        </div>
+        <div class="feature-text">
+          <span class="num">02</span>
+          <h3>직원을 뽑고, 마음을 챙기고</h3>
+          <p>오늘의 직원을 데려오고 팀을 꾸려요. 일이 손에 안 잡히는 직원과는 <b>1:1 면담</b>으로 이야기를 나눠요. 마케팅 직원이 들어오면 홍보 효과가 두 배!</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="shots">
+          <img class="shot" src="img/channels.jpg" alt="SNS 홍보, 검색 광고, 인플루언서 중 고르는 홍보 채널 선택" loading="lazy">
+          <div class="phone small inline"><img src="img/report.jpg" alt="홍보 성공과 고객 수가 보이는 주간 보고서" loading="lazy"></div>
+        </div>
+        <div class="feature-text">
+          <span class="num">03</span>
+          <h3>알리고, 모으고, 커지고</h3>
+          <p>SNS, 검색 광고, 인플루언서 중 골라 고객을 모아요. 한 주가 끝나면 <b>주간 보고서</b>가 성과를 한눈에 보여 줘요.</p>
+        </div>
+      </article>
+
+      <article class="feature flip">
+        <div class="shots"><img class="shot wide" src="img/secretary.jpg" alt="책상 위 비서 고양이와 회사 요약 줄이 보이는 비서실" loading="lazy"></div>
+        <div class="feature-text">
+          <span class="num">04</span>
+          <h3>비서 고양이가 챙겨 줘요</h3>
+          <p>새 소식, 급한 일, 직원들의 소소한 이야기까지. 비서실에 들르면 회사 사정을 다 알 수 있어요.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="calm">
+    <div class="wrap">
+      <div class="calm-card">
+        <img src="img/cat.png" alt="" class="px calm-cat">
+        <div>
+          <h2>압박 없이, 내 속도로</h2>
+          <p>바쁘면 잠깐 켜서 한 주만, 여유로우면 오래오래. 회사는 천천히, 그래도 꾸준히 자라요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <h2 class="section-title">게임 화면</h2>
+      <div class="strip">
+        <div class="phone"><img src="img/office.jpg" alt="사무실" loading="lazy"></div>
+        <div class="phone"><img src="img/weekly.jpg" alt="주간업무" loading="lazy"></div>
+        <div class="phone"><img src="img/report.jpg" alt="주간 보고서" loading="lazy"></div>
+        <div class="phone"><img src="img/store.jpg" alt="다이아 상점" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <h2>곧 Google Play에서 만나요</h2>
+        <p>출시 소식이나 궁금한 점은 언제든 편하게 보내 주세요.</p>
+        <a class="btn" href="support.html">문의하기</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav><a href="privacy.html">개인정보처리방침</a><a href="support.html">문의</a></nav>
+    <p>© 2026 Studio Oct</p>
+  </div>
+</footer>
+
+</body>
+</html>
