@@ -3,12 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>스타트업 키우기 — 고양이 대표와 키우는 나의 작은 회사</title>
-<meta name="description" content="한 주에 한 번, 팀에 일을 맡기고 제품을 만들고 회사를 키워 가는 느긋한 경영 게임. Studio Oct가 만들고 있어요.">
-<meta property="og:title" content="스타트업 키우기">
-<meta property="og:description" content="고양이 대표와 함께, 한 주씩 키우는 나의 작은 회사">
-<meta property="og:image" content="https://studiooct.github.io/img/office.jpg">
+<title>스타트업 키우기 — 비서 고양이와 키우는 나의 작은 회사</title>
+<meta name="description" content="업무를 배정하고 게임 속 한 주를 진행하는 회사 경영 게임. 비서 고양이와 함께 고시원 사무실에서 시작해 직원을 뽑고, 앱을 개발하고 출시하며 회사를 키워요. 곧 Google Play 출시.">
+<link rel="canonical" href="https://studiooct.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Oct">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://studiooct.github.io/">
+<meta property="og:title" content="스타트업 키우기">
+<meta property="og:description" content="비서 고양이와 함께 한 주씩 키우는 나의 작은 회사. 한 주씩 계획하고 결과를 보는 회사 경영 게임이에요.">
+<meta property="og:image" content="https://studiooct.github.io/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="스타트업 키우기 — 비서 고양이와 직원 36명이 일하는 픽셀 아트 사무실 게임 화면">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#BFDDC6">
 <link rel="icon" type="image/png" href="img/cat.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -16,10 +25,12 @@
 </head>
 <body>
 
+<a class="skip" href="#features">본문으로 건너뛰기</a>
+
 <header class="top">
   <div class="wrap top-row">
-    <a class="brand" href="./"><img src="img/cat.png" alt="" class="px"> Studio Oct</a>
-    <nav><a href="#features">게임 소개</a><a href="#gallery">화면</a><a href="support.html">문의</a></nav>
+    <a class="brand" href="./"><img src="img/cat.png" alt="" class="px" width="34" height="34"> Studio Oct</a>
+    <nav aria-label="페이지 메뉴"><a href="#features">게임 소개</a><a href="#growth">성장</a><a href="#gallery">화면</a><a href="support.html">문의</a></nav>
   </div>
 </header>
 
@@ -27,15 +38,20 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <span class="badge">곧 Google Play 출시</span>
-        <h1 class="title">스타트업<br>키우기</h1>
-        <p class="lead">고양이 대표와 함께,<br>한 주씩 키우는 나의 작은 회사.</p>
-        <p class="sub">고시원 사무실에서 시작해 직원을 뽑고, 제품을 만들고, 세계로 나가요. 쫓기지 않고 내 속도로.</p>
-        <ul class="tags"><li>주간 경영</li><li>느긋한 방치형</li><li>픽셀 아트</li></ul>
+        <h1 class="title">스타트업 키우기</h1>
+        <p class="lead">비서 고양이와 함께,<br>한 주씩 키우는 나의 작은 회사.</p>
+        <p class="sub">업무를 배정하고 게임 속 한 주를 진행하는 회사 경영 게임이에요. 고시원 사무실에서 시작해 직원을 뽑고, 앱을 개발하고 출시해서 세계 시장까지 나가요.</p>
+        <ul class="tags" aria-label="게임 특징"><li>주간 경영</li><li>회사 성장</li><li>픽셀 아트</li></ul>
+        <div class="release">
+          <p class="release-title">곧 Google Play 출시</p>
+          <p class="release-note">안드로이드용으로 출시를 준비하고 있어요.</p>
+        </div>
       </div>
       <div class="hero-phone">
-        <div class="phone"><img src="img/office.jpg" alt="직원들이 책상에서 일하는 사무실 화면"></div>
-        <div class="sticker">오늘도 화이팅!</div>
+        <div class="phone">
+          <img src="img/shot-office-540.jpg" srcset="img/shot-office-540.jpg 540w, img/shot-office.jpg 1080w" sizes="(max-width: 820px) 260px, 300px" width="540" height="960" fetchpriority="high"
+               alt="직원 36명이 책상에서 일하는 중형 사무실. 위에는 회사 이름 스타트업 키우기와 현금·시간당 수익이, 아래에는 업무 시작 버튼이 보이는 게임 첫 화면">
+        </div>
       </div>
     </div>
   </section>
@@ -45,56 +61,74 @@
       <h2 class="section-title">이런 게임이에요</h2>
 
       <article class="feature">
-        <div class="phone small"><img src="img/weekly.jpg" alt="제품마다 개발팀과 홍보팀을 배정하는 주간업무 화면" loading="lazy"></div>
         <div class="feature-text">
-          <span class="num">01</span>
+          <p class="num">01</p>
           <h3>한 주의 계획, 버튼 하나</h3>
-          <p>제품마다 개발팀과 홍보팀을 정하고 <b>업무 시작!</b>을 누르면 한 주가 흘러가요. 업데이트, 홍보, 해외 진출까지 판 하나에서 다 해요.</p>
+          <p>개발 중인 앱마다 개발팀과 홍보팀을 배정하고 <b>업무 시작</b>을 누르면 게임 속 한 주가 흘러가요. 새 앱 개발, 업데이트, 홍보를 한 화면에서 관리해요. 대표 고양이도 영업, 강연, 투자 미팅, 휴식 중에서 이번 주 할 일을 골라요.</p>
         </div>
+        <div class="phone small"><img src="img/shot-weekly-plan-540.jpg" width="540" height="960" loading="lazy"
+             alt="주간업무 화면. 아시아에 진출한 앱 칼퇴메이트에 개발1팀을 배정했고, 아래에서 대표 일정으로 외부 영업·강연·투자 미팅·휴식 중 하나를 고른다"></div>
       </article>
 
       <article class="feature flip">
-        <div class="shots">
-          <img class="shot" src="img/meeting.jpg" alt="대표 고양이와 직원이 마주 앉은 1:1 면담 장면" loading="lazy">
-          <img class="shot" src="img/newstaff.jpg" alt="새 마케팅 직원 합류, 홍보 효과 두 배" loading="lazy">
-        </div>
         <div class="feature-text">
-          <span class="num">02</span>
+          <p class="num">02</p>
           <h3>직원을 뽑고, 마음을 챙기고</h3>
-          <p>오늘의 직원을 데려오고 팀을 꾸려요. 일이 손에 안 잡히는 직원과는 <b>1:1 면담</b>으로 이야기를 나눠요. 마케팅 직원이 들어오면 홍보 효과가 두 배!</p>
+          <p>오늘의 직원을 데려와 팀을 꾸리고, 교육으로 실력을 키워요. 일이 손에 안 잡히는 직원과는 <b>1:1 면담</b>으로 이야기를 나눠요. 어떤 답을 고르느냐에 따라 직원의 마음이 달라져요.</p>
         </div>
+        <div class="phone small"><img src="img/shot-meeting-540.jpg" width="540" height="960" loading="lazy"
+             alt="1:1 면담 화면. 대표 고양이와 직원 강서버가 마주 앉아 있고, 직원이 이번 주 업무가 많았다고 말한다. 대답 세 가지 중 하나를 고른다"></div>
       </article>
 
       <article class="feature">
-        <div class="shots">
-          <img class="shot" src="img/channels.jpg" alt="SNS 홍보, 검색 광고, 인플루언서 중 고르는 홍보 채널 선택" loading="lazy">
-          <div class="phone small inline"><img src="img/report.jpg" alt="홍보 성공과 고객 수가 보이는 주간 보고서" loading="lazy"></div>
-        </div>
         <div class="feature-text">
-          <span class="num">03</span>
-          <h3>알리고, 모으고, 커지고</h3>
-          <p>SNS, 검색 광고, 인플루언서 중 골라 고객을 모아요. 한 주가 끝나면 <b>주간 보고서</b>가 성과를 한눈에 보여 줘요.</p>
+          <p class="num">03</p>
+          <h3>한 주를 마치면 주간 보고서</h3>
+          <p>한 주가 끝나면 주간 보고서가 매출과 지출, 앱 개발 진행을 한눈에 보여 줘요. 작게 시작한 앱도 업데이트를 거듭하면 등급이 오르고, 고객과 매출도 함께 늘어요.</p>
         </div>
+        <div class="phone small"><img src="img/shot-weekly-report-540.jpg" width="540" height="960" loading="lazy"
+             alt="주간 보고서 화면. 이번 주 현금과 첫 달 결산, 첫 앱 칼퇴메이트가 완성됐다는 표시가 보인다"></div>
       </article>
+    </div>
+  </section>
 
-      <article class="feature flip">
-        <div class="shots"><img class="shot wide" src="img/secretary.jpg" alt="책상 위 비서 고양이와 회사 요약 줄이 보이는 비서실" loading="lazy"></div>
-        <div class="feature-text">
-          <span class="num">04</span>
-          <h3>비서 고양이가 챙겨 줘요</h3>
-          <p>새 소식, 급한 일, 직원들의 소소한 이야기까지. 비서실에 들르면 회사 사정을 다 알 수 있어요.</p>
-        </div>
-      </article>
+  <section id="growth" class="growth">
+    <div class="wrap">
+      <h2 class="section-title">처음엔 작은 사무실,<br>다음 목표는 세계 시장</h2>
+      <p class="section-lead">회사는 천천히, 그래도 꾸준히 자라요. 어디까지 키울지는 대표님 선택이에요.</p>
+      <ol class="steps">
+        <li class="step">
+          <p class="step-num">1단계</p>
+          <h3>고시원 사무실에서 시작</h3>
+          <p>직원 한 명, 책상 몇 개. 첫 앱을 만들고 첫 매출을 내요.</p>
+          <img src="img/growth-1-first-office.jpg" width="600" height="600" loading="lazy"
+               alt="첫 주 사무실. 공간 레벨 고시원 사무실, 직원 수 1/5명. 직원 한 명이 책상에서 일하고 있다">
+        </li>
+        <li class="step">
+          <p class="step-num">2단계</p>
+          <h3>투자 유치 성공</h3>
+          <p>매출이 쌓이면 투자 기회가 와요. 투자를 받으면 회사 등급이 오르고, 동시에 만들 수 있는 앱이 늘어나요.</p>
+          <img src="img/growth-2-series-a.jpg" width="600" height="600" loading="lazy"
+               alt="투자 유치 성공 창. 회사 등급이 Seed에서 Series A로 오르고 투자금을 받는다. 고양이가 위에서 손을 흔든다">
+        </li>
+        <li class="step">
+          <p class="step-num">3단계</p>
+          <h3>아시아로, 그리고 세계로</h3>
+          <p>고객이 모이면 아시아, 미주·유럽, 그리고 전 세계로 진출해요. 식구가 늘면 더 넓은 사무실로 이사해요.</p>
+          <img src="img/growth-3-overseas.jpg" width="600" height="600" loading="lazy"
+               alt="주간업무 화면의 앱 칸. 앱 칼퇴메이트 옆에 아시아 시장 표시가 붙어 있고, 개발1팀이 배정되어 있다">
+        </li>
+      </ol>
     </div>
   </section>
 
   <section class="calm">
     <div class="wrap">
       <div class="calm-card">
-        <img src="img/cat.png" alt="" class="px calm-cat">
+        <img src="img/secretary-cat.jpg" width="320" height="320" loading="lazy" class="calm-cat" alt="비서실 방석 위에 앉아 앞발을 든 턱시도 고양이">
         <div>
-          <h2>압박 없이, 내 속도로</h2>
-          <p>바쁘면 잠깐 켜서 한 주만, 여유로우면 오래오래. 회사는 천천히, 그래도 꾸준히 자라요.</p>
+          <h2>한 주씩, 원할 때</h2>
+          <p>바쁘면 잠깐 켜서 한 주만, 여유로우면 오래오래. 파산도 게임 오버도 없어요. 새 소식과 급한 일은 비서 고양이가 챙겨 줘요.</p>
         </div>
       </div>
     </div>
@@ -103,12 +137,17 @@
   <section id="gallery" class="gallery">
     <div class="wrap">
       <h2 class="section-title">게임 화면</h2>
-      <div class="strip">
-        <div class="phone"><img src="img/office.jpg" alt="사무실" loading="lazy"></div>
-        <div class="phone"><img src="img/weekly.jpg" alt="주간업무" loading="lazy"></div>
-        <div class="phone"><img src="img/report.jpg" alt="주간 보고서" loading="lazy"></div>
-        <div class="phone"><img src="img/store.jpg" alt="다이아 상점" loading="lazy"></div>
-      </div>
+      <p class="section-lead">화면을 누르면 크게 볼 수 있어요.</p>
+      <ul class="shots-grid">
+        <li><a class="zoom" href="img/shot-first-office.jpg" data-caption="첫 사무실 — 고시원 사무실, 직원 한 명"><span class="phone"><img src="img/shot-first-office-540.jpg" width="540" height="960" loading="lazy" alt="첫 주 고시원 사무실. 직원 한 명이 일하고 있다"></span><span class="cap">첫 사무실</span></a></li>
+        <li><a class="zoom" href="img/shot-office.jpg" data-caption="직원 36명이 일하는 중형 사무실"><span class="phone"><img src="img/shot-office-540.jpg" width="540" height="960" loading="lazy" alt="직원 36명이 일하는 중형 사무실"></span><span class="cap">직원 36명 사무실</span></a></li>
+        <li><a class="zoom" href="img/shot-weekly-plan.jpg" data-caption="주간업무 — 팀 배정과 대표 일정"><span class="phone"><img src="img/shot-weekly-plan-540.jpg" width="540" height="960" loading="lazy" alt="개발팀과 홍보팀을 배정하는 주간업무 화면"></span><span class="cap">주간업무</span></a></li>
+        <li><a class="zoom" href="img/shot-weekly-report.jpg" data-caption="주간 보고서 — 첫 앱 완성"><span class="phone"><img src="img/shot-weekly-report-540.jpg" width="540" height="960" loading="lazy" alt="첫 앱 완성이 보이는 주간 보고서"></span><span class="cap">주간 보고서</span></a></li>
+        <li><a class="zoom" href="img/shot-series-a.jpg" data-caption="투자 유치 성공 — Seed에서 Series A로"><span class="phone"><img src="img/shot-series-a-540.jpg" width="540" height="960" loading="lazy" alt="Series A 투자 유치 성공 창"></span><span class="cap">투자 유치</span></a></li>
+        <li><a class="zoom" href="img/shot-hire.jpg" data-caption="채용 — 오늘의 직원과 지원자 목록"><span class="phone"><img src="img/shot-hire-540.jpg" width="540" height="960" loading="lazy" alt="오늘의 직원과 지원자 목록이 보이는 채용 화면"></span><span class="cap">채용</span></a></li>
+        <li><a class="zoom" href="img/shot-meeting.jpg" data-caption="1:1 면담 — 답에 따라 직원의 마음이 달라져요"><span class="phone"><img src="img/shot-meeting-540.jpg" width="540" height="960" loading="lazy" alt="대표 고양이와 직원의 1:1 면담"></span><span class="cap">1:1 면담</span></a></li>
+        <li><a class="zoom" href="img/shot-secretary.jpg" data-caption="비서실 — 비서 고양이가 오늘의 소식을 알려 줘요"><span class="phone"><img src="img/shot-secretary-540.jpg" width="540" height="960" loading="lazy" alt="비서 고양이가 말을 건네는 비서실과 오늘의 소식 목록"></span><span class="cap">비서실</span></a></li>
+      </ul>
     </div>
   </section>
 
@@ -116,8 +155,8 @@
     <div class="wrap">
       <div class="cta-card">
         <h2>곧 Google Play에서 만나요</h2>
-        <p>출시 소식이나 궁금한 점은 언제든 편하게 보내 주세요.</p>
-        <a class="btn" href="support.html">문의하기</a>
+        <p>안드로이드용으로 출시를 준비하고 있어요. 출시되면 이곳에서 바로 받을 수 있게 알려 드릴게요.</p>
+        <p class="cta-small">궁금한 점은 <a href="support.html">문의</a>로 편하게 보내 주세요.</p>
       </div>
     </div>
   </section>
@@ -125,10 +164,65 @@
 
 <footer class="foot">
   <div class="wrap">
-    <nav><a href="privacy.html">개인정보처리방침</a><a href="support.html">문의</a></nav>
+    <nav aria-label="안내 문서"><a href="privacy.html">개인정보처리방침</a><a href="probability.html">확률 안내</a><a href="support.html">문의</a></nav>
     <p>© 2026 Studio Oct</p>
   </div>
 </footer>
 
+<dialog id="lightbox" class="lightbox" aria-label="게임 화면 크게 보기">
+  <div class="lb-inner">
+    <figure class="lb-figure">
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <div class="lb-controls">
+      <button type="button" class="lb-btn" data-act="prev">이전</button>
+      <button type="button" class="lb-btn" data-act="close" autofocus>닫기</button>
+      <button type="button" class="lb-btn" data-act="next">다음</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('lightbox');
+  if (!dlg || typeof dlg.showModal !== 'function') return; // 지원하지 않는 브라우저는 링크로 그림을 엽니다
+  var links = Array.prototype.slice.call(document.querySelectorAll('a.zoom'));
+  var img = dlg.querySelector('img');
+  var cap = dlg.querySelector('figcaption');
+  var idx = 0, opener = null;
+  function show(i) {
+    idx = (i + links.length) % links.length;
+    var a = links[idx];
+    img.src = a.getAttribute('href');
+    img.alt = a.querySelector('img').alt;
+    cap.textContent = a.getAttribute('data-caption') || '';
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      opener = a;
+      show(i);
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('[data-act=prev]').addEventListener('click', function () { show(idx - 1); });
+  dlg.querySelector('[data-act=next]').addEventListener('click', function () { show(idx + 1); });
+  function closeBox() {
+    if (dlg.open) dlg.close();
+    img.removeAttribute('src');
+    if (opener) opener.focus();
+  }
+  dlg.querySelector('[data-act=close]').addEventListener('click', closeBox);
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg || e.target.classList.contains('lb-inner')) closeBox();
+  });
+  dlg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  dlg.addEventListener('close', function () { if (!dlg.open) closeBox(); }); // Esc로 닫을 때
+})();
+</script>
 </body>
 </html>

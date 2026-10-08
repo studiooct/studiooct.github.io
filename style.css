@@ -13,3 +13,12 @@ h1, h2 { font-family: "Galmuri11", sans-serif; }
 .card { border:3px solid var(--line); border-radius:18px; box-shadow:0 6px 0 var(--line); }
 body { background-image: radial-gradient(#B1D3B9 2px, transparent 2px); background-size: 22px 22px; }
 main { padding-top: 8px; }
+.table-scroll { max-width:100%; overflow-x:auto; margin:12px 0; }
+.table-scroll table { min-width:520px; }
+.table-scroll .transfer-table { min-width:920px; }
+#event-probabilities { min-width:640px; }
+#event-probabilities td:nth-child(2), #event-probabilities td:nth-child(3) { white-space:nowrap; }
+h2[id] { scroll-margin-top:80px; }
+caption { text-align:left; font-weight:700; padding:0 0 8px; }
+.notice { padding:12px 14px; border-left:3px solid var(--green); background:#E5EDD5; }
+td, p, li { overflow-wrap:anywhere; }
