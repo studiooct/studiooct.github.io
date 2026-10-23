@@ -1,0 +1,36 @@
+/* 언어 바꾸기 줄 · 일본어/번체 글꼴 (BL-1056). 모든 페이지가 마지막 스타일로 불러온다. */
+
+/* 작은 줄: 모든 페이지 맨 위 */
+.lang-bar { background: #24523F; color: #FFF8E6; font-size: .85rem; line-height: 1.4; }
+.lang-bar .lang-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 2px 4px; min-height: 36px; padding-top: 3px; padding-bottom: 3px; }
+.lang-bar .lang-icon { margin-right: 2px; }
+.lang-bar a { color: #FFF8E6; text-decoration: none; padding: 5px 9px; border-radius: 8px; white-space: nowrap; }
+.lang-bar a:hover { text-decoration: underline; }
+.lang-bar a[aria-current="page"] { background: #FFF8E6; color: #24523F; font-weight: 700; }
+
+/* 큰 줄: /privacy.html(스토어·광고 동의 화면이 가리키는 하나뿐인 주소) 맨 위 */
+.lang-bar-big { background: #FFF8E6; color: #4A3A2C; border-bottom: 3px solid #5A4636; font-size: 1rem; }
+.lang-bar-big .lang-row { justify-content: center; gap: 10px; padding-top: 12px; padding-bottom: 14px; }
+.lang-bar-big .lang-hint { flex-basis: 100%; margin: 0; text-align: center; font-size: .95rem; }
+.lang-bar-big a { color: #4A3A2C; background: #fff; border: 2px solid #5A4636; border-radius: 12px; padding: 8px 16px; min-width: 7.5em; text-align: center; font-size: 1.05rem; font-weight: 700; }
+.lang-bar-big a[aria-current="page"] { background: #2F6B53; color: #fff; }
+
+/* 번역 안내 한 줄(개인정보처리방침 각 언어판) */
+.translation-note { margin-top: 10px; }
+
+/* 일본어·번체: 기기 글꼴만 쓴다(웹 글꼴 파일 없음). 픽셀 글꼴은 한글·영문용이라 가나·한자가 섞여 깨져 보인다. */
+html:lang(ja) body, html:lang(ja) body *:not(.brand) { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; }
+html:lang(zh-Hant) body, html:lang(zh-Hant) body *:not(.brand) { font-family: "PingFang TC", "Noto Sans TC", sans-serif; }
+/* 한국어용 keep-all은 띄어쓰기가 없는 일본어·중국어를 한 줄로 밀어내 가로 스크롤을 만든다 */
+html:lang(ja) body, html:lang(zh-Hant) body { word-break: normal; line-break: strict; }
+
+/* 언어 이름은 그 언어 글꼴로 */
+html body .lang-bar a:lang(ko) { font-family: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+html body .lang-bar a:lang(en) { font-family: "Pretendard", -apple-system, "Segoe UI", Roboto, sans-serif; }
+html body .lang-bar a:lang(ja), html body .lang-bar span:lang(ja) { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; }
+html body .lang-bar a:lang(zh-Hant), html body .lang-bar span:lang(zh-Hant) { font-family: "PingFang TC", "Noto Sans TC", sans-serif; }
+
+/* 좁은 폰(400px 이하): 번역판 위 메뉴가 한국어보다 길어 가로로 밀리지 않게 */
+@media (max-width: 400px) {
+  html:not(:lang(ko)) .top nav a { margin-left: 8px; font-size: .8rem; }
+}

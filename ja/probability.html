@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>確率表記 — Grow My Startup</title><link rel="icon" type="image/png" href="../img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/probability.html">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/probability.html">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/probability.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/probability.html">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/probability.html">
+<!-- /i18n:hreflang -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="../home.css"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../lang.css"></head><body>
+<!-- i18n:langbar -->
+<nav class="lang-bar" aria-label="言語"><div class="wrap lang-row"><span class="lang-icon" aria-hidden="true">🌐</span><a href="../probability.html" hreflang="ko" lang="ko">한국어</a><a href="../en/probability.html" hreflang="en" lang="en">English</a><a href="probability.html" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="../zh-tw/probability.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></div></nav>
+<!-- /i18n:langbar -->
+<header class="top"><div class="wrap top-row"><a class="brand" href="./"><img src="../img/cat.png" alt="" class="px"> Studio Oct</a>
+<nav><a href="./#features">ゲーム紹介</a><a href="./#gallery">画面</a><a href="support.html">お問い合わせ</a></nav></div></header>
+<main><div class="card"><h1>採用・選択の確率表記</h1><p class="soft">基準日：2026年10月21日 · 公開前の確認用</p>
+<p>有料で入手したダイヤやゲーム内の現金を使える選択について、その確率をご案内します。表の現金・売上・ブランドはゲーム内の数値であり、実際のお金や投資の収益ではありません。</p>
+<p class="notice">外見については生成方法を説明していますが、外見ごとの数値をどこまで公開するかはまだ検討中です。このページは、法令上のすべての表示要件を満たしていると判定されたものではありません。</p>
+<nav aria-label="確率表記の目次"><a href="#hire">採用</a><a href="#events">イベントの選択</a><a href="#coffee">コーヒーチャット</a><a href="#promotion">宣伝</a></nav>
+
+<h2 id="hire">1. 採用ランク</h2>
+<p>ヘッドハンティング候補の更新にかかる基本コストは<strong>ダイヤ100</strong>です。候補を生成するときにランクを抽選し、ヘッドハンティングの候補ごとに、下記の同じ確率を適用します。前回の結果が次の候補の確率を変える天井や累積確率の補正は、この抽選にはありません。ダイヤを使う更新では下の表を使用し、初回の無料案内における部署保証の例外とは区別します。</p>
+<div class="table-scroll" role="region" aria-label="採用ランクの確率" tabindex="0"><table id="grade-probabilities">
+<caption>候補1人あたりのランク別確率 · 各行の合計100%</caption><thead><tr><th scope="col">採用ルート</th><th scope="col">C</th><th scope="col">B</th><th scope="col">A</th><th scope="col">S</th><th scope="col">SS</th><th scope="col">SSS</th></tr></thead><tbody><tr><th scope="row">公開採用</th><td>55%</td><td>28%</td><td>12%</td><td>4%</td><td>0.9%</td><td>0.1%</td></tr><tr><th scope="row">経験者採用</th><td>30%</td><td>32%</td><td>22%</td><td>11%</td><td>4.5%</td><td>0.5%</td></tr><tr><th scope="row">ヘッドハンティング・今日の社員の生成</th><td>10%</td><td>20%</td><td>30%</td><td>28%</td><td>10%</td><td>2%</td></tr><tr><th scope="row">役員採用*</th><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>100%</td></tr></tbody></table></div>
+<p>「今日の社員」は、日付が変わって候補を生成するときに、ヘッドハンティングと同じランク表を使用します。購入時は<strong>画面に表示されている社員をそのまま</strong>受け取り、再抽選は行いません。公開採用・経験者採用も、候補の生成時に表の確率を使用します。</p>
+<p class="soft">* 役員は、この採用ルートでは SSS に固定されます。現在のリリース版の画面で準備中となっている役員募集を、すでに利用できる商品としてご案内するものではありません。</p>
+<h2>2. 候補の部署・能力・名前・外見</h2>
+<p>部署はランクとは別に選択します。開放済みの部署のみを対象に、開発・マーケティング・営業はそれぞれ重み2、経理・人事はそれぞれ重み1として合計し、計算します。</p>
+<div class="table-scroll" role="region" aria-label="開放済み部署ごとの確率" tabindex="0"><table id="department-probabilities"><caption>部署の開放状況に応じた、候補1人の部署確率</caption><thead><tr><th scope="col">開放済みの部署</th><th scope="col">開発</th><th scope="col">マーケティング</th><th scope="col">営業</th><th scope="col">経理</th><th scope="col">人事</th></tr></thead><tbody>
+<tr><th scope="row">基本の3部署</th><td>1/3 (33.333…%)</td><td>1/3 (33.333…%)</td><td>1/3 (33.333…%)</td><td>0%</td><td>0%</td></tr>
+<tr><th scope="row">経理までの4部署</th><td>2/7 (28.571…%)</td><td>2/7 (28.571…%)</td><td>2/7 (28.571…%)</td><td>1/7 (14.285…%)</td><td>0%</td></tr>
+<tr><th scope="row">全5部署</th><td>25%</td><td>25%</td><td>25%</td><td>12.5%</td><td>12.5%</td></tr>
+</tbody></table></div>
+<p>初回の無料案内におけるヘッドハンティング候補には、開発・マーケティング・営業をすべて表示する例外があります。その後の一部の無料案内では、公開採用の最初の候補でも必要な部署を保証する場合があります。これらは、有料のヘッドハンティング更新における重み付き抽選とは区別します。</p>
+<ul><li>初期状態はレベル1・忠誠度70%です。役職・ランクに応じて能力・給与が決まり、追加の能力・特性を別途抽選することはありません。</li>
+<li>名前：共通リストと該当部署のリストの両方に未使用の名前がある場合、どちらのリストが選ばれるかはそれぞれ50%です。選ばれたリストに未使用の名前がN個ある場合、各名前の確率は1/Nです。片方のリストを使い切るともう一方のリストから選び、両方とも使い切ると全リストを再び使用します。会社の社員と保存されている候補の名前によって、対象が変わります。</li>
+<li>外見：新しい社員の識別値から外見・色が決まり、能力には影響しません。プログラム上、外見ごとに独立した均等な確率が保証されていないため、外見ごとに根拠なく同じ確率を記載することはしていません。外見ごとの数値をどこまで公開するかは、公開前に追加で検討します。</li></ul>
+<h2 id="events">3. ゲーム内の現金を使うイベントの選択</h2>
+<p>現金もスタートパックやダイヤを使う方法で入手できるため、あわせてご案内します。各イベントが発生したときの、その選択肢の成功・失敗の確率です。イベントそのものが発生する確率は、この表の成功確率とは異なります。</p>
+<div class="table-scroll" role="region" aria-label="イベントの選択肢の確率と結果" tabindex="0"><table id="event-probabilities"><caption>条件を満たして選択したときの確率・効果</caption><thead><tr><th scope="col">選択肢</th><th scope="col">成功</th><th scope="col">失敗</th><th scope="col">各結果による変化</th></tr></thead><tbody><tr><th scope="row">外部のセキュリティコンサルティングを導入</th><td>90%</td><td>10%</td><td>成功：ゲーム内の現金 -10,000,000 · ブランド +50<br>失敗：ゲーム内の現金 -10,000,000 · ブランド -5</td></tr><tr><th scope="row">値引き条件で再交渉</th><td>85%</td><td>15%</td><td>成功：ゲーム内の現金 -3,000,000 · ブランド +10<br>失敗：ゲーム内の現金 -3,000,000</td></tr><tr><th scope="row">サーバーの緊急増設（高コスト）</th><td>90%</td><td>10%</td><td>成功：ゲーム内の現金 -5,000,000 · ブランド +20 · 売上 ×1.1 · 3日間<br>失敗：ゲーム内の現金 -5,000,000</td></tr><tr><th scope="row">本審査に応募 — 発表資料＋動画制作</th><td>60%</td><td>40%</td><td>成功：ゲーム内の現金 -5,000,000 · ブランド +55 · 売上 ×1.15 · 14日間<br>失敗：ゲーム内の現金 -5,000,000 · ブランド +5</td></tr><tr><th scope="row">SLA を明確に案内＋対応時間を制限</th><td>70%</td><td>30%</td><td>成功：ブランド +20<br>失敗：ゲーム内の現金 -1,440,000</td></tr></tbody></table></div>
+<p>表のブランドは、現在適用されるブランド・評判の効果を合計した値です。既存の数値の上限やバフの適用ルールは、そのまま適用されます。失敗しても費用がかかる場合があるので、確認したうえで選択してください。</p>
+<h2 id="coffee">4. コーヒーチャット</h2>
+<p>一緒にコーヒーを飲むストーリーが95%、少しこぼしてしまうストーリーが5%です。どちらのストーリーも忠誠度<strong>+5%p（最大100%）</strong>で、効果は同じです。忠誠度が上がる効果は100%適用されます。</p>
+<h2 id="promotion">5. 宣伝</h2>
+<p>現在の製品の3つの宣伝チャネルと会社の宣伝は、確定効果（成功100%・失敗0%）です。下記の海外宣伝と旧宣伝ルートは別の確率を使用し、失敗しても着手費用がかかります。</p>
+<div class="table-scroll" role="region" aria-label="宣伝の成功と失敗の確率" tabindex="0"><table id="campaign-probabilities"><caption>宣伝が完了したときの判定</caption><thead><tr><th scope="col">ルート</th><th scope="col">成功</th><th scope="col">失敗</th></tr></thead><tbody>
+<tr><th scope="row">海外宣伝：アジア・米州/欧州・グローバル</th><td>70%</td><td>30%</td></tr><tr><th scope="row">旧 SNS 宣伝</th><td>60%</td><td>40%</td></tr><tr><th scope="row">旧インフルエンサー宣伝</th><td>70%</td><td>30%</td></tr><tr><th scope="row">旧検索広告</th><td>95%</td><td>5%</td></tr><tr><th scope="row">旧コンテンツマーケティング</th><td>100%</td><td>0%</td></tr>
+<tr><th scope="row">現在の製品の3チャネル・会社の宣伝</th><td>100%</td><td>0%</td></tr></tbody></table></div>
+<p>海外宣伝に成功すると、その市場に進出します。旧宣伝ルートは、そのルートが適用されているセーブデータ・画面でのみ参考にしてください。現在の週ごとの宣伝チャネルの成功率と混同しないようご注意ください。</p>
+<h2>6. 確定している報酬・効果</h2>
+<p>ダイヤのセット・デイリーダイヤパス・スタートパックの報酬は確定しています。ダイヤでの研修・即時完了・製品スロット・退職防止・助成金・ダイヤでの投資確定も、ランダムな報酬を購入する方式ではありません。ミッション宝箱は確定報酬であり、購入できるランダムな宝箱は確認されていません。</p>
+<h2>7. 変更・お問い合わせ</h2><p>確率を変更した場合は、該当するゲームのバージョンとこのページの基準日を更新します。お問い合わせ：<a href="mailto:contact.studiooct@gmail.com">contact.studiooct@gmail.com</a> · Studio Oct（스튜디오옥트）。</p>
+</div></main><footer class="foot"><div class="wrap"><nav><a href="privacy.html">プライバシーポリシー</a><a href="probability.html">確率表記</a><a href="support.html">お問い合わせ</a></nav><p class="biz">Studio Oct（스튜디오옥트）· 代表：Eunchong Hong · 事業者登録番号 844-57-01010<br>3F #368, 19 Dongho-ro 14-gil, Jung-gu, Seoul, Republic of Korea · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p></div></footer></body></html>

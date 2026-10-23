@@ -19,12 +19,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#BFDDC6">
 <link rel="icon" type="image/png" href="img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/">
+<!-- /i18n:hreflang -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="home.css">
-</head>
+<link rel="stylesheet" href="lang.css"></head>
 <body>
-
+<!-- i18n:langbar -->
+<nav class="lang-bar" aria-label="언어"><div class="wrap lang-row"><span class="lang-icon" aria-hidden="true">🌐</span><a href="./" hreflang="ko" lang="ko" aria-current="page">한국어</a><a href="en/" hreflang="en" lang="en">English</a><a href="ja/" hreflang="ja" lang="ja">日本語</a><a href="zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></div></nav>
+<!-- /i18n:langbar -->
 <a class="skip" href="#features">본문으로 건너뛰기</a>
 
 <header class="top">
@@ -43,8 +52,10 @@
         <p class="sub">업무를 배정하고 게임 속 한 주를 진행하는 회사 경영 게임이에요. 고시원 사무실에서 시작해 직원을 뽑고, 앱을 개발하고 출시해서 세계 시장까지 나가요.</p>
         <ul class="tags" aria-label="게임 특징"><li>주간 경영</li><li>회사 성장</li><li>픽셀 아트</li></ul>
         <div class="release">
-          <p class="release-title">곧 Google Play 출시</p>
-          <p class="release-note">안드로이드용으로 출시를 준비하고 있어요.</p>
+          <p class="release-title">Google Play 사전 등록</p>
+          <p class="release-note">안드로이드용으로 출시를 준비하고 있어요. 사전 등록하면 출시되는 날 Google Play가 알려 드려요.</p>
+          <!-- 사전 등록 주소: Play 콘솔에서 사전 등록을 연 뒤 준비 중 버튼(is-soon span)을 스토어 주소 링크로 바꾼다(BL-1024) -->
+          <span class="btn-prereg is-soon" aria-disabled="true">사전 등록 준비 중</span>
         </div>
       </div>
       <div class="hero-phone">
@@ -64,7 +75,7 @@
         <div class="feature-text">
           <p class="num">01</p>
           <h3>한 주의 계획, 버튼 하나</h3>
-          <p>개발 중인 앱마다 개발팀과 홍보팀을 배정하고 <b>업무 시작</b>을 누르면 게임 속 한 주가 흘러가요. 새 앱 개발, 업데이트, 홍보를 한 화면에서 관리해요. 대표 고양이도 영업, 강연, 투자 미팅, 휴식 중에서 이번 주 할 일을 골라요.</p>
+          <p>개발 중인 앱마다 개발팀과 홍보팀을 배정하고 <b>업무 시작</b>을 누르면 게임 속 한 주가 흘러가요. 새 앱 개발, 업데이트, 홍보를 한 화면에서 관리해요. 대표인 나도 영업, 강연, 투자 미팅, 휴식 중에서 이번 주 할 일을 골라요.</p>
         </div>
         <div class="phone small"><img src="img/shot-weekly-plan-540.jpg" width="540" height="960" loading="lazy"
              alt="주간업무 화면. 아시아에 진출한 앱 칼퇴메이트에 개발1팀을 배정했고, 아래에서 대표 일정으로 외부 영업·강연·투자 미팅·휴식 중 하나를 고른다"></div>
@@ -77,7 +88,7 @@
           <p>오늘의 직원을 데려와 팀을 꾸리고, 교육으로 실력을 키워요. 일이 손에 안 잡히는 직원과는 <b>1:1 면담</b>으로 이야기를 나눠요. 어떤 답을 고르느냐에 따라 직원의 마음이 달라져요.</p>
         </div>
         <div class="phone small"><img src="img/shot-meeting-540.jpg" width="540" height="960" loading="lazy"
-             alt="1:1 면담 화면. 대표 고양이와 직원 강서버가 마주 앉아 있고, 직원이 이번 주 업무가 많았다고 말한다. 대답 세 가지 중 하나를 고른다"></div>
+             alt="1:1 면담 화면. 비서 고양이와 직원 서예러가 탁자를 사이에 두고 마주 보고 있고, 직원이 요즘 회사 분위기가 좋은 것 같다고 말한다. 대답 세 가지 중 하나를 고른다"></div>
       </article>
 
       <article class="feature">
@@ -145,7 +156,7 @@
         <li><a class="zoom" href="img/shot-weekly-report.jpg" data-caption="주간 보고서 — 첫 앱 완성"><span class="phone"><img src="img/shot-weekly-report-540.jpg" width="540" height="960" loading="lazy" alt="첫 앱 완성이 보이는 주간 보고서"></span><span class="cap">주간 보고서</span></a></li>
         <li><a class="zoom" href="img/shot-series-a.jpg" data-caption="투자 유치 성공 — Seed에서 Series A로"><span class="phone"><img src="img/shot-series-a-540.jpg" width="540" height="960" loading="lazy" alt="Series A 투자 유치 성공 창"></span><span class="cap">투자 유치</span></a></li>
         <li><a class="zoom" href="img/shot-hire.jpg" data-caption="채용 — 오늘의 직원과 지원자 목록"><span class="phone"><img src="img/shot-hire-540.jpg" width="540" height="960" loading="lazy" alt="오늘의 직원과 지원자 목록이 보이는 채용 화면"></span><span class="cap">채용</span></a></li>
-        <li><a class="zoom" href="img/shot-meeting.jpg" data-caption="1:1 면담 — 답에 따라 직원의 마음이 달라져요"><span class="phone"><img src="img/shot-meeting-540.jpg" width="540" height="960" loading="lazy" alt="대표 고양이와 직원의 1:1 면담"></span><span class="cap">1:1 면담</span></a></li>
+        <li><a class="zoom" href="img/shot-meeting.jpg" data-caption="1:1 면담 — 답에 따라 직원의 마음이 달라져요"><span class="phone"><img src="img/shot-meeting-540.jpg" width="540" height="960" loading="lazy" alt="비서 고양이와 직원의 1:1 면담"></span><span class="cap">1:1 면담</span></a></li>
         <li><a class="zoom" href="img/shot-secretary.jpg" data-caption="비서실 — 비서 고양이가 오늘의 소식을 알려 줘요"><span class="phone"><img src="img/shot-secretary-540.jpg" width="540" height="960" loading="lazy" alt="비서 고양이가 말을 건네는 비서실과 오늘의 소식 목록"></span><span class="cap">비서실</span></a></li>
       </ul>
     </div>
@@ -154,8 +165,9 @@
   <section class="cta">
     <div class="wrap">
       <div class="cta-card">
-        <h2>곧 Google Play에서 만나요</h2>
-        <p>안드로이드용으로 출시를 준비하고 있어요. 출시되면 이곳에서 바로 받을 수 있게 알려 드릴게요.</p>
+        <h2>Google Play에서 사전 등록하세요</h2>
+        <p>안드로이드용으로 출시를 준비하고 있어요. 사전 등록하면 출시되는 날 Google Play가 알려 드려요.</p>
+        <p><span class="btn-prereg btn-prereg-big is-soon" aria-disabled="true">Google Play 사전 등록 준비 중</span></p>
         <p class="cta-small">궁금한 점은 <a href="support.html">문의</a>로 편하게 보내 주세요.</p>
       </div>
     </div>
@@ -165,7 +177,7 @@
 <footer class="foot">
   <div class="wrap">
     <nav aria-label="안내 문서"><a href="privacy.html">개인정보처리방침</a><a href="probability.html">확률 안내</a><a href="support.html">문의</a></nav>
-    <p>© 2026 Studio Oct</p>
+    <p class="biz">스튜디오옥트(Studio Oct) · 대표 홍은총 · 사업자등록번호 844-57-01010<br>서울특별시 중구 동호로14길 19, 3층 368호(신당동, 고마운빌딩) · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p>
   </div>
 </footer>
 
