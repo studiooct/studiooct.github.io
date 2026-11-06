@@ -62,7 +62,7 @@ section[id] { scroll-margin-top: 72px; }
 .tags { list-style: none; padding: 0; margin: 0 0 22px; display: flex; flex-wrap: wrap; gap: 4px 0; }
 .tags li { font-family: "Galmuri11", sans-serif; font-size: .95rem; color: var(--green-deep); }
 .tags li + li::before { content: "·"; margin: 0 10px; color: var(--green-deep); }
-/* 출시 상태 — 아직 누를 곳이 없어서 버튼·상자 모양이 아닌 글 한 줄 (사전 등록 링크가 생기면 버튼으로 바꿈) */
+/* 출시 상태 — 출시일에 스토어 링크 연결 */
 .release { border-top: 2px solid rgba(47, 107, 83, .35); padding-top: 16px; max-width: 32em; }
 .release p { margin: 0; }
 .release-title { font-family: "Galmuri11", sans-serif; font-weight: 700; font-size: 24px; color: var(--green-deep); line-height: 1.4; }
@@ -141,18 +141,6 @@ section[id] { scroll-margin-top: 72px; }
 .cta-card p { margin: 0 auto 8px; max-width: 34em; }
 .cta-card .cta-small { margin: 14px auto 0; font-size: .95rem; color: var(--ink-soft); }
 
-/* 사전 등록 버튼 (BL-1024 · BL-1056) — 주소는 Play 사전 등록을 연 뒤 채운다 */
-.btn-prereg {
-  display: inline-block; margin-top: 14px; padding: 12px 22px;
-  background: var(--green-dark); color: #fff; text-decoration: none;
-  font-family: "Galmuri11", sans-serif; font-weight: 700; font-size: 1.05rem; line-height: 1.35;
-  border: 3px solid var(--line); border-radius: 14px; box-shadow: 0 4px 0 var(--line);
-}
-.btn-prereg:hover { background: var(--green-deep); }
-.btn-prereg:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--line); }
-.btn-prereg.is-soon { opacity: .6; cursor: default; pointer-events: none; }
-.cta-card .btn-prereg-big { margin-top: 10px; padding: 14px 28px; font-size: 1.2rem; }
-
 /* lightbox */
 .lightbox { padding: 0; border: 0; margin: 0; width: 100%; height: 100%; max-width: 100%; max-height: 100%; background: transparent; }
 .lightbox::backdrop { background: rgba(40, 32, 24, .92); }
@@ -227,3 +215,15 @@ section[id] { scroll-margin-top: 72px; }
   .cta-card { padding: 28px 16px; }
   .cta-card h2 { font-size: 20px; }
 }
+
+/* 현재 캡처 전체를 비율 그대로 표시 */
+.step img[src*="st1-"] { aspect-ratio:9 / 16; height:auto; object-fit:contain; }
+
+.phone .legacy-note { margin:0; padding:8px; max-width:none; background:var(--cream); color:var(--ink); }
+@media (max-width:560px) {
+  .top-row { height:auto; min-height:60px; flex-wrap:wrap; justify-content:center; padding-top:10px; padding-bottom:10px; }
+  .top nav { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 14px; white-space:normal; }
+  .top nav a { margin-left:0; }
+}
+
+@media (max-width:560px) { .tags { gap:4px 16px; } .tags li + li::before { content:none; } }

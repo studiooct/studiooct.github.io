@@ -1,0 +1,22 @@
+/* FAQ·보도자료: 기존 민트·크림 안내 페이지 스타일을 이어 쓴다. */
+.search-page .page-head { background:var(--cream); border-bottom:3px solid var(--line); padding:14px 0; }
+.search-page .page-head .wrap { display:flex; flex-wrap:wrap; align-items:center; gap:10px 24px; }
+.search-page .page-nav { display:flex; flex-wrap:wrap; gap:8px 16px; }
+.search-page .page-nav a { margin:0; }
+.search-page main { padding-top:24px; }
+.search-page h1 { line-height:1.4; }
+.search-page .game-name { font-size:1.1rem; font-weight:700; margin:4px 0; }
+.search-page .card h2 { margin:0 0 10px; line-height:1.6; }
+.search-page .card p { margin:8px 0; }
+.search-page .card { margin-bottom:24px; }
+.search-page table { table-layout:fixed; }
+.search-page th { width:30%; }
+.search-page th, .search-page td { overflow-wrap:anywhere; }
+.search-page .press-shots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.search-page figure { margin:0; min-width:0; }
+.search-page figure img { width:100%; height:auto; border:2px solid var(--line); border-radius:10px; }
+.search-page figcaption { text-align:center; margin-top:8px; }
+.search-page .foot .page-nav { justify-content:center; }
+@media(max-width:600px) { .search-page .press-shots { grid-template-columns:1fr; max-width:240px; margin:20px auto 0; gap:24px; } .search-page .card { padding:18px; } }
+
+.search-page .income-unit { white-space:nowrap; }
