@@ -67,6 +67,8 @@ section[id] { scroll-margin-top: 72px; }
 .release p { margin: 0; }
 .release-title { font-family: "Galmuri11", sans-serif; font-weight: 700; font-size: 24px; color: var(--green-deep); line-height: 1.4; }
 .release-note { font-size: .95rem; }
+.btn { display: inline-block; margin-top: 12px; background: var(--green-deep); color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 700; }
+.btn:hover { filter: brightness(1.1); }
 .hero-phone { justify-self: center; }
 
 /* phone frame */
