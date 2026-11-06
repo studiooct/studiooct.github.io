@@ -81,7 +81,7 @@ body { background:var(--cream); }
 .v3-gallery a.zoom { display:block; }
 
 /* 끝: 게임 축하 창 */
-.v3-end { position:relative; padding:170px 0 96px; background:var(--cream); text-align:center; }
+.v3-end { position:relative; padding:72px 0 96px; background:var(--cream); text-align:center; }
 .v3-end-card { position:relative; width:min(600px,100%); margin:0 auto; }
 .v3 .v3-end-cat { position:absolute; left:50%; top:-182px; width:114px; height:auto; transform:translateX(-50%); image-rendering:pixelated !important; }
 .v3-end h2 { margin:0 0 20px; font-size:clamp(1.5rem,3vw,2rem); line-height:1.3; }
@@ -107,7 +107,7 @@ body { background:var(--cream); }
   .v3-gallery .shots-grid { justify-content:flex-start; }
   .v3-moments { padding:56px 0 60px; }
   .v3-moments ul { grid-template-columns:1fr; gap:22px; }
-  .v3-end { padding-top:170px; }
+  .v3-end { padding-top:60px; }
   .v3 .v3-end-cat { top:-170px; }
   .v3 .v3-paper { display:none; }
   .v3 .gcard { border-width:24px; border-image-width:24px; }
