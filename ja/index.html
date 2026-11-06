@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>こつこつ社長 — 1週間ずつ、小さな会社を大きく。秘書は猫です。</title>
-<meta name="description" content="仕事を割り振って、ゲームの中の1週間を進める会社経営ゲーム。秘書ネコと一緒に小さな一室のオフィスから始めて社員を採用し、アプリを開発・リリースしながら会社を育てます。まもなく Google Play で配信予定。">
+<title>こつこつ社長 — 猫の秘書と育てる放置経営ゲーム</title>
+<meta name="description" content="こつこつ社長は、猫の秘書と一週間ずつ会社を育てる放置経営ゲーム。社員を採用して、アプリを作って、社内のトラブルを解決しながら、小さな部屋から上場まで目指しましょう。Google Playで無料配信中。">
 <link rel="canonical" href="https://studiooct.github.io/ja/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Studio Oct">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://studiooct.github.io/ja/">
-<meta property="og:title" content="こつこつ社長">
-<meta property="og:description" content="秘書ネコと一緒に、1週間ずつ育てるわたしの小さな会社。1週間ずつ計画して結果を見る、会社経営ゲームです。">
-<meta property="og:image" content="https://studiooct.github.io/img/b25/ja/office.webp">
-<meta property="og:image:width" content="540">
-<meta property="og:image:height" content="960">
-<meta property="og:image:alt" content="オフィスビル">
+<meta property="og:title" content="こつこつ社長 — 猫の秘書と育てる放置経営ゲーム">
+<meta property="og:description" content="こつこつ社長は、猫の秘書と一週間ずつ会社を育てる放置経営ゲーム。社員を採用して、アプリを作って、社内のトラブルを解決しながら、小さな部屋から上場まで目指しましょう。Google Playで無料配信中。">
+<meta property="og:image" content="https://studiooct.github.io/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="こつこつ社長">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#BFDDC6">
 <link rel="icon" type="image/png" href="../img/cat.png">
@@ -26,10 +26,9 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/">
 <link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/">
 <!-- /i18n:hreflang -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="../home.css">
-<link rel="stylesheet" href="../landing.css">
+<link rel="stylesheet" href="../lp.css">
 <link rel="stylesheet" href="../lang.css">
 <script type="application/ld+json">
 {
@@ -62,7 +61,10 @@
     "zh-TW"
   ],
   "isAccessibleForFree": true,
-  "description": "秘書猫と一緒に、ゲーム内の1週間ごとに会社を育てる放置型の会社経営ゲームです。社員を雇い、プロダクトに開発・宣伝・営業チームを配置します。プロダクトごとに1フロアを使うビルで、社長を現場に送り、コーヒーでチームを応援しながら、アップデートと海外進出を重ねていきます。 基本プレイ無料で、任意のアプリ内課金があります。ダイヤを購入しなくても遊び続けられます。リワード広告は、自分で選んだときだけ視聴する形式です。"
+  "description": "猫の秘書と一週間ずつ会社を育てる放置経営ゲームです。社員を採用し、アプリを作って配信し、突発イベントを解決しながら、小さな部屋から上場を目指します。",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.ceogame.app",
+  "sameAs": ["https://play.google.com/store/apps/details?id=com.ceogame.app", "https://www.youtube.com/@스타트업키우기-oct", "https://x.com/Studio_Oct"],
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"}
 }
 </script>
 </head>
@@ -71,68 +73,45 @@
 <nav class="lang-bar" aria-label="言語"><div class="wrap lang-row"><span class="lang-icon" aria-hidden="true">🌐</span><a href="../" hreflang="ko" lang="ko">한국어</a><a href="../en/" hreflang="en" lang="en">English</a><a href="./" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="../zh-tw/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></div></nav>
 <!-- /i18n:langbar -->
 
-<a class="skip" href="#features">本文へスキップ</a>
+<a class="skip" href="#hire">本文へスキップ</a>
 
 <header class="top">
   <div class="wrap top-row">
     <a class="brand" href="./"><img src="../img/cat.png" alt="" class="px" width="34" height="34"> Studio Oct</a>
-    <nav aria-label="ページメニュー"><a href="#features">ゲーム紹介</a><a href="#growth">成長</a><a href="#gallery">画面</a><a href="support.html">お問い合わせ</a></nav>
+    <nav aria-label="menu"><a href="#play">プレイ</a><a href="#hire">社員</a><a href="#app">製品</a><a href="#events">事件</a><a href="#week">一週間</a><a href="support.html">お問い合わせ</a></nav>
   </div>
 </header>
 
-<main class="v3">
-  <section class="v3-hero">
-    <div class="v3-wrap">
-      <div class="v3-hero-text">
-        <h1>こつこつ社長</h1>
-        <p class="lead">1週間ずつ、小さな会社を大きく。<br>秘書は猫です。</p>
-        <p class="sub">小さな部屋から、自分の社屋を目指してこつこつ！</p>
-        <a class="gbtn" href="https://play.google.com/store/apps/details?id=com.ceogame.app&amp;utm_source=homepage&amp;utm_medium=referral&amp;utm_campaign=launch_ja_w01_site_button">Google Playでダウンロード</a>
-      </div>
-      <img class="v3-building" src="../img/v3/hero-building.webp" width="872" height="1200" fetchpriority="high" alt="">
+<main class="lp">
+  <section class="hero"><div class="wrap2 hero-row">
+    <div class="hero-txt">
+      <h1>こつこつ社長</h1>
+      <p class="lead2">猫の秘書と、<br>一週間ずつ育てる小さな会社。</p>
+      <p class="sub2">小さなオフィスから、社員を採用し、製品を作り、世界へ。</p>
+      <div class="cta"><a class="gbtn" href="https://play.google.com/store/apps/details?id=com.ceogame.app&amp;utm_source=homepage&amp;utm_medium=referral&amp;utm_campaign=launch_ja_w01_site_button&amp;utm_content=hero">Google Playでダウンロード</a>
+      <button type="button" class="bgm" aria-pressed="false" data-on="音楽オフ" data-off="音楽オン"><span aria-hidden="true">♪</span> <b>音楽オン</b></button></div>
+      <p class="meta2">無料 · Android · 한국어 English 日本語 繁體中文</p>
     </div>
-  </section>
-
-  <section id="features" class="v3-week">
-    <div class="v3-wrap" id="gallery">
-      <h2 class="v3-title">ゲーム画面</h2>
-      <ol>
-        <li><a class="zoom v3-shot" href="../img/b25/ja/hire.webp" data-caption="採用"><img src="../img/b25/ja/hire.webp" width="540" height="1200" loading="lazy" alt="採用"></a>
-          <p class="v3-quote">新しい仲間を 迎えよう</p></li>
-        <li><a class="zoom v3-shot" href="../img/b25/ja/board.webp" data-caption="週間業務"><img src="../img/b25/ja/board.webp" width="540" height="1200" loading="lazy" alt="週間業務"></a>
-          <p class="v3-quote">1週間ずつ 会社が成長！</p></li>
-        <li><a class="zoom v3-shot" href="../img/b25/ja/new.webp" data-caption="製品"><img src="../img/b25/ja/new.webp" width="540" height="1200" loading="lazy" alt="製品"></a>
-          <p class="v3-quote">小さなプロダクトが 国内から世界へ</p></li>
-        <li><a class="zoom v3-shot" href="../img/b25/ja/report.webp" data-caption="週次レポート"><img src="../img/b25/ja/report.webp" width="540" height="1200" loading="lazy" alt="週次レポート"></a>
-          <p class="v3-quote">今週の結果を ひと目で確認</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="growth" class="v3-grow">
-    <h2 class="v3-title">小さな会社、どこまで育つ？</h2>
-    <p class="lead2">オフィスは7段階で大きくなります。</p>
-    <div class="v3-street-scroll" tabindex="0"><div class="v3-street"><img src="../img/v3/b1.webp" alt="" loading="lazy"><img src="../img/v3/b2.webp" alt="" loading="lazy"><img src="../img/v3/b3.webp" alt="" loading="lazy"><img src="../img/v3/b4.webp" alt="" loading="lazy"><img src="../img/v3/b5.webp" alt="" loading="lazy"><img src="../img/v3/b6.webp" alt="" loading="lazy"><img src="../img/v3/b7.webp" alt="" loading="lazy"></div></div>
-  </section>
-
-  <section class="v3-moments">
-    <div class="v3-wrap">
-      <h2 class="v3-title">小さな部屋から 上場まで！</h2>
-      <ul><li><img src="../img/b25/ja/m-fund.webp" width="500" height="455" loading="lazy" alt=""></li><li><img src="../img/b25/ja/m-market.webp" width="500" height="455" loading="lazy" alt=""></li><li><img src="../img/b25/ja/m-move.webp" width="500" height="455" loading="lazy" alt=""></li><li><img src="../img/b25/ja/m-ipo.webp" width="500" height="455" loading="lazy" alt=""></li></ul>
-    </div>
-  </section>
-
-  <section class="v3-end">
-    <div class="v3-wrap">
-      <div class="v3-end-card gcard">
-        <img class="v3-paper" style="left:-44px;top:-30px" src="../img/v3/p0.png" alt=""><img class="v3-paper" style="right:-40px;top:6px" src="../img/v3/p3.png" alt=""><img class="v3-paper" style="left:-30px;bottom:-14px" src="../img/v3/p5.png" alt=""><img class="v3-paper" style="right:-52px;bottom:-34px" src="../img/v3/p8.png" alt="">
-        <h2>1週間ずつ、好きなときに</h2>
-        <p>忙しいときは少しだけ開いて1週間だけ、時間があるときはのんびり長く。倒産もゲームオーバーもありません。新しいお知らせや急ぎの用事は、秘書ネコが教えてくれます。</p>
-        <p style="margin:22px 0 0"><a class="gbtn" href="https://play.google.com/store/apps/details?id=com.ceogame.app&amp;utm_source=homepage&amp;utm_medium=referral&amp;utm_campaign=launch_ja_w01_site_button">Google Playでダウンロード</a></p>
-        <p class="note">基本プレイ無料で、任意のアプリ内課金があります。ダイヤを購入しなくても遊び続けられます。リワード広告は、自分で選んだときだけ視聴する形式です。<br>気になることがあれば、<a href="support.html">お問い合わせ</a>からお気軽にどうぞ。</p>
-      </div>
-    </div>
-  </section>
+    <div class="hero-cat" aria-hidden="true"><p class="plate">採用中…</p><div class="catbox"><img class="px" src="../img/lp/hire-cat-a.png" width="342" height="342" alt=""><img class="px b" src="../img/lp/hire-cat-b.png" width="342" height="342" alt=""></div></div>
+  </div></section>
+  <section id="play" class="sec band play"><div class="wrap2"><p class="kick c">会社の一日</p><h2 class="c big">しーっ! 社員が居眠り</h2><p class="c">うとうとする社員も、社長がエレベーターで駆けつけると、はっ!</p>
+    <div class="play-row"><div class="vid"><video src="../video/s1-ja.mp4" poster="../img/lp/ja-poster.webp" autoplay muted loop playsinline preload="metadata" width="540" height="960" aria-label="しーっ! 社員が居眠り"></video></div>
+    <ol class="psteps"><li><img src="../img/lp/ja-doze.webp" width="720" height="320" loading="lazy" alt="社員が居眠りしている階"><div><h3>居眠りしていたら起こしてあげて</h3><p>チームリーダーのいないチームは、社長が見えないとうとうと。バーも止まってしまいます。</p></div></li><li><img src="../img/lp/ja-rush.webp" width="720" height="340" loading="lazy" alt="社長が到着して2倍速くなった階"><div><h3>階を押すと駆けつけます</h3><p>社長がエレベーターで向かいます。着いたら居眠り社員がはっと起きて、その階は2倍速に！</p></div></li><li><img src="../img/lp/ja-cup.webp" width="720" height="333" loading="lazy" alt="コーヒーで速くなった階"><div><h3>コーヒーを配りましょう</h3><p>コーヒーを渡すと、その階はしばらく2.5倍。社長もいれば3.5倍です！</p></div></li></ol></div>
+    <p class="c strong">バーがいっぱいになるたび、顧客と現金がぽんぽん!</p></div></section>
+  <section id="hire" class="sec"><div class="wrap2 row"><div class="txt"><p class="kick">採用</p><h2>新しい仲間を迎えよう</h2><p>採用方法を選んでボタンを押すと、猫がモニターをめくって、履歴書が一枚ずつ裏返り、等級のハンコがポン。高い等級はキラキラ光ります。</p><p>10人引いても全員採らなくて大丈夫。気に入った人だけ選びましょう。</p><p>名前も見てみてください。開発に林虫太郎、営業に村上手土産が待っていますよ。</p></div><div class="pic"><a class="zoom shot " href="../img/lp/ja-ten.webp" data-caption="10人の採用結果画面"><img src="../img/lp/ja-ten.webp" width="540" height="960" loading="lazy" alt="10人の採用結果画面"></a></div></div></section>
+  <section id="app" class="sec flip"><div class="wrap2 row"><div class="txt"><p class="kick">製品</p><h2>小さなプロダクトが国内から世界へ</h2><p>アイコンと色を選んで名前を付ければ、うちの会社の製品になります。</p><p>迷ったらおすすめを押してみて。定時退社カラオケ、ぐっすり日記帳のような名前が出てきます。</p><p>配信したら、アップデートして、宣伝して、営業で稼ぎましょう。</p></div><div class="pic"><a class="zoom shot " href="../img/lp/ja-new.webp" data-caption="新製品の名前とアイコン、色を選ぶ画面"><img src="../img/lp/ja-new.webp" width="540" height="990" loading="lazy" alt="新製品の名前とアイコン、色を選ぶ画面"></a></div></div></section>
+  <section id="events" class="sec band"><div class="wrap2"><p class="kick c">突発イベント</p><h2 class="c">会社では、いろんなことが起こります</h2><p class="c">社長ならどうしますか？ ひとつ押してみてください。</p>
+    <div class="evs"><article class="ev"><h3>残業を強要する古い考えの上司</h3><p class="ev-d">パク部長がチームに根性論を語って、残業をさせています。</p><div class="ev-b"><button type="button" class="ev-c" data-r="面談の立場が逆転！ パク部長に「最近の社長は根性がない」と言われてしまいました。">正式面談＋初回警告</button><button type="button" class="ev-c" data-r="パク部長に辞めてもらいました。退職金はかかったけれど、チーム能力が上がって、その日は6時に帰れました。">即時解雇＋チームに通知</button><button type="button" class="ev-c" data-r="そのままにしました。お金はかからないけれど、チーム能力が下がって、根性論の講義は第2部へ。">そのままにする</button></div><p class="ev-r" hidden aria-live="polite"></p></article><article class="ev"><h3>社内カップル誕生</h3><p class="ev-d">同じチームの2人が付き合っているといううわさが流れています。</p><div class="ev-b"><button type="button" class="ev-c" data-r="全社でお祝いしました。お祝い金はかかったけれど、チームの雰囲気がよくなりました。">公式に祝福＋慶弔費を支給</button><button type="button" class="ev-c" data-r="仕事の集中力が戻りました。2人とも仕事はばっちりです。">自然な形で別々のチームに配置</button><button type="button" class="ev-c" data-r="そっとしておくことにしました。チームはもう知っていて、みんな応援しています。">そのままにする — 仕事さえきちんとすればいい</button></div><p class="ev-r" hidden aria-live="polite"></p></article><article class="ev"><h3>社長のSNS騒動</h3><p class="ev-d">社長のSNS投稿がスクショされて広まっています。解約の問い合わせも届き始めました。</p><div class="ev-b"><button type="button" class="ev-c" data-r="放っておいたら、お客さんが離れてしまいました。時間は解決してくれませんでした。">無視する — 時間が解決する</button><button type="button" class="ev-c" data-r="謝罪文を出しました。お金はかかったけれど、離れたお客さんは少なめです。文章は代理店、署名は社長です。">公式謝罪文＋宣伝代理店を投入（回避）</button><button type="button" class="ev-c" data-r="ダイヤで緊急宣伝をしました。離れたお客さんはいません。">ダイヤで緊急宣伝パッケージ（即時回避）</button></div><p class="ev-r" hidden aria-live="polite"></p></article></div>
+    <p class="c small">こんな事件が20種類以上あります。</p></div></section>
+  <section id="week" class="sec"><div class="wrap2"><p class="kick c">週間業務</p><h2 class="c">1週間ずつ会社が成長！</h2><div class="narrow"><p>製品ごとに開発・宣伝・営業のチームを入れて業務開始を押すと、3分間会社が動きます。終わったら週次レポートが届いて、今週の現金と製品ごとの結果を一枚で見られます。</p></div>
+    <div class="two"><a class="zoom shot " href="../img/lp/ja-board.webp" data-caption="製品ごとにチームを割り当てる週間業務の画面"><img src="../img/lp/ja-board.webp" width="540" height="1200" loading="lazy" alt="製品ごとにチームを割り当てる週間業務の画面"></a><a class="zoom shot " href="../img/lp/ja-report.webp" data-caption="一週間の結果を見る週次レポート"><img src="../img/lp/ja-report.webp" width="540" height="360" loading="lazy" alt="一週間の結果を見る週次レポート"></a></div></div></section>
+  <section id="people" class="sec flip"><div class="wrap2 row"><div class="txt"><p class="kick">面談</p><h2>社員の気持ちも大切に</h2><p>退職を考える社員がいたら、呼んで1対1で話しましょう。ボーナスを渡したり、コーヒーチャットをしたりもできます。</p><p>研修に出すと、インターンがジュニアに、ジュニアがシニアに育ちます。</p></div><div class="pic"><a class="zoom shot " href="../img/lp/ja-join.webp" data-caption="退職を考える社員をケアする画面"><img src="../img/lp/ja-join.webp" width="540" height="960" loading="lazy" alt="退職を考える社員をケアする画面"></a></div></div></section>
+  <section id="life" class="sec"><div class="wrap2 narrow c"><div class="txt"><p class="kick">社長の暮らし</p><h2>稼いだお金で、社長も変わります</h2><p>会社が稼ぐと、社長の資産も増えていきます。</p><p>服を買って、家と車を変えると、社長のプロフィールも変わりますよ。</p></div></div></section>
+  <section id="sec" class="sec flip"><div class="wrap2 row"><div class="txt"><p class="kick">秘書室</p><h2>秘書猫から会社のニュース</h2><p>週次レポートや急ぎの用件は秘書室に集まります。顧客数、次の投資までの売上、社員数もここでまとめて見られます。</p></div><div class="pic"><a class="zoom shot " href="../img/lp/ja-sec.webp" data-caption="猫のいる秘書室の画面"><img src="../img/lp/ja-sec.webp" width="540" height="900" loading="lazy" alt="猫のいる秘書室の画面"></a></div></div></section>
+  <section id="big" class="sec band"><div class="wrap2"><p class="kick c">次の目標</p><h2 class="c">小さな部屋から上場まで</h2><p class="c">投資を受けて、国内からアジアへ、世界へ。その先は、ぜひ自分で確かめてみてください。</p>
+    <ul class="moments"><li><img src="../img/lp/ja-m-fund.webp" width="428" height="331" loading="lazy" alt="投資成功の画面"></li><li><img src="../img/lp/ja-m-market.webp" width="428" height="331" loading="lazy" alt="海外進出成功の画面"></li><li><img src="../img/lp/ja-m-ipo.webp" width="428" height="331" loading="lazy" alt="上場成功の画面"></li></ul></div></section>
+  <section id="more" class="sec"><div class="wrap2"><h2 class="c">ほかにも楽しいことがいっぱい</h2><ul class="more"><li><b>電球</b><span>社員の頭に電球が出たら押してみて。お客さんが増えますよ。</span></li><li><b>設備</b><span>いい設備を買ってあげると、バーが速くたまります。</span></li><li><b>チームリーダー</b><span>信頼できる社員に任せると、チームが居眠りしなくなります。</span></li><li><b>アップデート</b><span>製品を更新すると等級が上がって、顧客も収益も増えます。</span></li><li><b>投資ピッチ</b><span>投資のチャンスが来たら、自分でピッチしても経理チームに任せてもOK。</span></li><li><b>ミッション</b><span>毎日、毎週やってみることを教えてくれます。</span></li><li><b>金庫</b><span>離れている間も、収益が少しずつたまります。</span></li><li><b>ランキング</b><span>ほかの社長の会社と成長を比べてみましょう。</span></li></ul></div></section>
+  <section class="endcta"><div class="wrap2"><h2>今日から始める、小さな会社!</h2><p>秘書猫が待っています。</p><a class="gbtn" href="https://play.google.com/store/apps/details?id=com.ceogame.app&amp;utm_source=homepage&amp;utm_medium=referral&amp;utm_campaign=launch_ja_w01_site_button&amp;utm_content=end">Google Playでダウンロード</a><p class="small">無料で遊べて、ゲーム内購入は任意です。ダイヤを買わなくても続けられて、リワード広告は見たいときに自分で押して見ます。</p></div></section>
 </main>
 
 <footer class="foot">
@@ -197,5 +176,7 @@
   dlg.addEventListener('close', function () { if (!dlg.open) closeBox(); }); // Esc で閉じたとき
 })();
 </script>
+<audio id="bgm" src="../audio/office.mp3" loop preload="none"></audio>
+<script src="../lp.js"></script>
 </body>
 </html>
