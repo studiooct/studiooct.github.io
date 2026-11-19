@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쿠폰 넣기 — 냥아치 키우기</title>
+<meta name="description" content="냥아치 키우기 쿠폰 코드를 넣고 보상을 게임 우편함으로 받으세요.">
+<link rel="canonical" href="https://studiooct.github.io/nyangachi/coupon.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Oct">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://studiooct.github.io/nyangachi/coupon.html">
+<meta property="og:title" content="쿠폰 넣기 — 냥아치 키우기">
+<meta property="og:description" content="냥아치 키우기 쿠폰 코드를 넣고 보상을 게임 우편함으로 받으세요.">
+<meta property="og:image" content="https://studiooct.github.io/img/nyang/feature.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFDF8">
+<link rel="icon" type="image/png" href="../img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/nyangachi/coupon.html">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<!-- /i18n:hreflang -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&amp;display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body class="so-page">
+<a class="so-skip" href="#main">본문으로 건너뛰기</a>
+<header class="so-head"><div class="so-wrap so-head-row">
+  <a class="so-brand" href="../">Studio Oct</a>
+  <nav class="so-nav" aria-label="menu"><a href="../#games">게임</a><a href="../#studio">스튜디오</a></nav>
+  <nav class="so-langs" aria-label="언어"><a href="../nyangachi/coupon.html" hreflang="ko" lang="ko" title="한국어" aria-current="page">KO</a><a href="../en/nyangachi/coupon.html" hreflang="en" lang="en" title="English">EN</a><a href="../ja/nyangachi/coupon.html" hreflang="ja" lang="ja" title="日本語">JA</a><a href="../zh-tw/nyangachi/coupon.html" hreflang="zh-Hant" lang="zh-Hant" title="繁體中文">繁中</a></nav>
+</div></header>
+<main id="main"><div class="so-wrap so-doc so-coupon">
+    <p class="so-doc-back"><a href="../nyangachi/">← 냥아치 키우기</a></p>
+    <h1>쿠폰 넣기</h1>
+    <p>쿠폰 코드를 넣으면 보상이 게임 우편함으로 가요.</p>
+    <form id="cp" novalidate>
+      <label for="cp-id">회원 번호</label>
+      <input id="cp-id" name="id" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="64" required>
+      <label for="cp-code">쿠폰 코드</label>
+      <input id="cp-code" name="code" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="16" placeholder="영어·숫자 4~16자" required>
+      <button class="so-press-btn" type="submit">받기</button>
+      <p id="cp-msg" class="so-coupon-msg" role="status" aria-live="polite"></p>
+    </form>
+    <h2>회원 번호 찾는 법</h2>
+    <ol><li>게임에서 설정을 열고 &quot;쿠폰&quot;을 눌러요. 아이폰은 &quot;회원 번호&quot;예요.</li><li>회원 번호 옆의 &quot;복사&quot;를 누르고 위 칸에 붙여 넣어요.</li></ol>
+    <ul class="so-doc-note"><li>쿠폰은 회원 번호마다 한 번씩 쓸 수 있어요.</li><li>다른 사람의 번호를 넣으면 그 사람에게 보상이 가요.</li><li>안드로이드는 게임 안의 설정 → 쿠폰에서도 바로 넣을 수 있어요.</li></ul>
+</div></main>
+<script>
+(function () {
+  var DB = "https://firestore.googleapis.com/v1/projects/nyangachi-studiooct/databases/(default)/documents", M = {"bad_id": "회원 번호를 다시 확인해 주세요. 게임에서 복사한 번호를 그대로 붙여 넣으면 돼요.", "bad_code": "코드는 영어와 숫자 4~16자예요.", "ok": "쿠폰을 넣었어요! 게임을 다시 켜면 보상이 우편함에 와요.", "used": "이미 쓴 쿠폰이에요.", "fail": "쓸 수 없는 쿠폰이에요. 코드와 기한을 확인해 주세요. 이미 쓴 쿠폰일 수도 있어요.", "net": "연결이 안 됐어요. 잠시 뒤 다시 해 주세요.", "busy": "넣는 중…", "go": "받기"};
+  var f = document.getElementById("cp"), idIn = document.getElementById("cp-id"), codeIn = document.getElementById("cp-code"),
+      out = document.getElementById("cp-msg"), btn = f.querySelector("button");
+  try { idIn.value = localStorage.getItem("nyang_member") || ""; } catch (x) {}
+  function say(text, kind) { out.textContent = text; out.className = "so-coupon-msg" + (kind ? " is-" + kind : ""); }
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var id = idIn.value.replace(/\s+/g, ""), code = codeIn.value.replace(/\s+/g, "").toUpperCase();
+    if (!/^[A-Za-z0-9]{20,40}$/.test(id)) { say(M.bad_id, "bad"); idIn.focus(); return; }
+    if (!/^[A-Z0-9]{4,16}$/.test(code)) { say(M.bad_code, "bad"); codeIn.focus(); return; }
+    idIn.value = id; codeIn.value = code;
+    try { localStorage.setItem("nyang_member", id); } catch (x) {}
+    var name = DB.replace("https://firestore.googleapis.com/v1/", "") + "/redeem/" + id + "/codes/" + code;
+    var body = { writes: [{ update: { name: name, fields: {} }, currentDocument: { exists: false },
+      updateTransforms: [{ fieldPath: "t", setToServerValue: "REQUEST_TIME" }] }] };
+    btn.disabled = true; btn.textContent = M.busy; say("");
+    fetch(DB + ":commit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (r.ok) { say(M.ok, "ok"); codeIn.value = ""; return; }
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          var st = (j && j.error && j.error.status) || "";
+          if (r.status === 409 || st === "ALREADY_EXISTS") say(M.used, "bad");
+          else if (r.status === 400 || r.status === 403 || r.status === 404) say(M.fail, "bad");
+          else say(M.net, "bad");
+        });
+      }, function () { say(M.net, "bad"); })
+      .then(function () { btn.disabled = false; btn.textContent = M.go; });
+  });
+})();
+</script>
+
+<footer class="so-foot"><div class="so-parade" aria-hidden="true"><div class="so-wrap"><img src="../img/nyang/pal-crew1.webp" alt=""><img src="../img/nyang/pal-crew2.webp" alt=""><img src="../img/nyang/pal-crew3.webp" alt=""><img src="../img/nyang/pal-crew4.webp" alt=""><img src="../img/nyang/pal-crew5.webp" alt=""></div></div><div class="so-wrap">
+  <nav aria-label="냥아치 키우기"><b>냥아치 키우기</b><a href="../nyangachi/">소개</a><a href="../nyangachi/press/">보도자료실</a><a href="../nyangachi/coupon.html">쿠폰</a><a href="../nyangachi/privacy.html">개인정보처리방침</a><a href="mailto:contact.studiooct@gmail.com">문의</a></nav>
+  <nav aria-label="스타트업 키우기"><b>스타트업 키우기</b><a href="../startup/">소개</a><a href="../faq.html">자주 묻는 질문</a><a href="../press-kit.html">보도자료실</a><a href="../probability.html">확률 안내</a><a href="../privacy.html">개인정보처리방침</a><a href="../support.html">문의</a></nav>
+  <p>스튜디오옥트(Studio Oct) · 대표 홍은총 · 사업자등록번호 844-57-01010<br>서울특별시 중구 동호로14길 19, 3층 368호(신당동, 고마운빌딩) · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p>
+</div></footer>
+</body>
+</html>

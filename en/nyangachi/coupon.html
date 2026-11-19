@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redeem a coupon — Kitty Kingpin: Idle Alley Cat</title>
+<meta name="description" content="Enter a Kitty Kingpin: Idle Alley Cat coupon code and get the reward in your in-game mailbox.">
+<link rel="canonical" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Oct">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://studiooct.github.io/en/nyangachi/coupon.html">
+<meta property="og:title" content="Redeem a coupon — Kitty Kingpin: Idle Alley Cat">
+<meta property="og:description" content="Enter a Kitty Kingpin: Idle Alley Cat coupon code and get the reward in your in-game mailbox.">
+<meta property="og:image" content="https://studiooct.github.io/img/nyang/feature.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFDF8">
+<link rel="icon" type="image/png" href="../../img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/nyangachi/coupon.html">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<!-- /i18n:hreflang -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&amp;display=swap">
+<link rel="stylesheet" href="../../site.css">
+</head>
+<body class="so-page">
+<a class="so-skip" href="#main">Skip to content</a>
+<header class="so-head"><div class="so-wrap so-head-row">
+  <a class="so-brand" href="../../en/">Studio Oct</a>
+  <nav class="so-nav" aria-label="menu"><a href="../../en/#games">Games</a><a href="../../en/#studio">Studio</a></nav>
+  <nav class="so-langs" aria-label="Language"><a href="../../nyangachi/coupon.html" hreflang="ko" lang="ko" title="한국어">KO</a><a href="../../en/nyangachi/coupon.html" hreflang="en" lang="en" title="English" aria-current="page">EN</a><a href="../../ja/nyangachi/coupon.html" hreflang="ja" lang="ja" title="日本語">JA</a><a href="../../zh-tw/nyangachi/coupon.html" hreflang="zh-Hant" lang="zh-Hant" title="繁體中文">繁中</a></nav>
+</div></header>
+<main id="main"><div class="so-wrap so-doc so-coupon">
+    <p class="so-doc-back"><a href="../../en/nyangachi/">← Kitty Kingpin: Idle Alley Cat</a></p>
+    <h1>Redeem a coupon</h1>
+    <p>Enter a coupon code and your reward will be sent to the game&#x27;s Mailbox.</p>
+    <form id="cp" novalidate>
+      <label for="cp-id">Member ID</label>
+      <input id="cp-id" name="id" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="64" required>
+      <label for="cp-code">Coupon code</label>
+      <input id="cp-code" name="code" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="16" placeholder="4–16 letters and numbers" required>
+      <button class="so-press-btn" type="submit">Redeem</button>
+      <p id="cp-msg" class="so-coupon-msg" role="status" aria-live="polite"></p>
+    </form>
+    <h2>How to find your Member ID</h2>
+    <ol><li>In the game, open Settings and tap &quot;Coupon&quot;. On iPhone, tap &quot;Member ID&quot; instead.</li><li>Tap &quot;Copy&quot; next to your Member ID and paste it into the field above.</li></ol>
+    <ul class="so-doc-note"><li>Each coupon can be used once per Member ID.</li><li>If you enter someone else&#x27;s ID, the reward goes to them.</li><li>On Android, you can also enter codes in the game under Settings → Coupon.</li></ul>
+</div></main>
+<script>
+(function () {
+  var DB = "https://firestore.googleapis.com/v1/projects/nyangachi-studiooct/databases/(default)/documents", M = {"bad_id": "Please double-check your Member ID. Paste it exactly as copied from the game.", "bad_code": "Coupon codes must be 4–16 characters long, using only letters and numbers.", "ok": "Coupon redeemed! Restart the game to find your reward in the Mailbox.", "used": "You already used this coupon.", "fail": "This coupon can't be used. Check the code and expiration date. You may have already used it.", "net": "Couldn't connect. Please try again in a moment.", "busy": "Redeeming…", "go": "Redeem"};
+  var f = document.getElementById("cp"), idIn = document.getElementById("cp-id"), codeIn = document.getElementById("cp-code"),
+      out = document.getElementById("cp-msg"), btn = f.querySelector("button");
+  try { idIn.value = localStorage.getItem("nyang_member") || ""; } catch (x) {}
+  function say(text, kind) { out.textContent = text; out.className = "so-coupon-msg" + (kind ? " is-" + kind : ""); }
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var id = idIn.value.replace(/\s+/g, ""), code = codeIn.value.replace(/\s+/g, "").toUpperCase();
+    if (!/^[A-Za-z0-9]{20,40}$/.test(id)) { say(M.bad_id, "bad"); idIn.focus(); return; }
+    if (!/^[A-Z0-9]{4,16}$/.test(code)) { say(M.bad_code, "bad"); codeIn.focus(); return; }
+    idIn.value = id; codeIn.value = code;
+    try { localStorage.setItem("nyang_member", id); } catch (x) {}
+    var name = DB.replace("https://firestore.googleapis.com/v1/", "") + "/redeem/" + id + "/codes/" + code;
+    var body = { writes: [{ update: { name: name, fields: {} }, currentDocument: { exists: false },
+      updateTransforms: [{ fieldPath: "t", setToServerValue: "REQUEST_TIME" }] }] };
+    btn.disabled = true; btn.textContent = M.busy; say("");
+    fetch(DB + ":commit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (r.ok) { say(M.ok, "ok"); codeIn.value = ""; return; }
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          var st = (j && j.error && j.error.status) || "";
+          if (r.status === 409 || st === "ALREADY_EXISTS") say(M.used, "bad");
+          else if (r.status === 400 || r.status === 403 || r.status === 404) say(M.fail, "bad");
+          else say(M.net, "bad");
+        });
+      }, function () { say(M.net, "bad"); })
+      .then(function () { btn.disabled = false; btn.textContent = M.go; });
+  });
+})();
+</script>
+
+<footer class="so-foot"><div class="so-parade" aria-hidden="true"><div class="so-wrap"><img src="../../img/nyang/pal-crew1.webp" alt=""><img src="../../img/nyang/pal-crew2.webp" alt=""><img src="../../img/nyang/pal-crew3.webp" alt=""><img src="../../img/nyang/pal-crew4.webp" alt=""><img src="../../img/nyang/pal-crew5.webp" alt=""></div></div><div class="so-wrap">
+  <nav aria-label="Kitty Kingpin"><b>Kitty Kingpin</b><a href="../../en/nyangachi/">About</a><a href="../../en/nyangachi/coupon.html">Coupon</a><a href="../../en/nyangachi/privacy.html">Privacy policy</a><a href="mailto:contact.studiooct@gmail.com">Support</a></nav>
+  <nav aria-label="Grow My Startup"><b>Grow My Startup</b><a href="../../en/startup/">About</a><a href="../../en/faq.html">FAQ</a><a href="../../en/press-kit.html">Press kit</a><a href="../../en/probability.html">Probabilities</a><a href="../../en/privacy.html">Privacy policy</a><a href="../../en/support.html">Support</a></nav>
+  <p>Studio Oct (스튜디오옥트) · Representative: Eunchong Hong · Business registration no. 844-57-01010<br>3F #368, 19 Dongho-ro 14-gil, Jung-gu, Seoul, Republic of Korea · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p>
+</div></footer>
+</body>
+</html>

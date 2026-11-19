@@ -1,0 +1,6 @@
+# Public pages: all search and AI crawlers are welcome.
+# Includes OAI-SearchBot, GPTBot, PerplexityBot and Googlebot.
+User-agent: *
+Allow: /
+
+Sitemap: https://studiooct.github.io/sitemap.xml

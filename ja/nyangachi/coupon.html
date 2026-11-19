@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>クーポン入力 — にゃんピラ育成</title>
+<meta name="description" content="にゃんピラ育成のクーポンコードを入力して、報酬をゲームのメールボックスで受け取りましょう。">
+<link rel="canonical" href="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Oct">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<meta property="og:title" content="クーポン入力 — にゃんピラ育成">
+<meta property="og:description" content="にゃんピラ育成のクーポンコードを入力して、報酬をゲームのメールボックスで受け取りましょう。">
+<meta property="og:image" content="https://studiooct.github.io/img/nyang/feature.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFDF8">
+<link rel="icon" type="image/png" href="../../img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/nyangachi/coupon.html">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<!-- /i18n:hreflang -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&amp;display=swap">
+<link rel="stylesheet" href="../../site.css">
+</head>
+<body class="so-page">
+<a class="so-skip" href="#main">本文へスキップ</a>
+<header class="so-head"><div class="so-wrap so-head-row">
+  <a class="so-brand" href="../../ja/">Studio Oct</a>
+  <nav class="so-nav" aria-label="menu"><a href="../../ja/#games">ゲーム</a><a href="../../ja/#studio">スタジオ</a></nav>
+  <nav class="so-langs" aria-label="言語"><a href="../../nyangachi/coupon.html" hreflang="ko" lang="ko" title="한국어">KO</a><a href="../../en/nyangachi/coupon.html" hreflang="en" lang="en" title="English">EN</a><a href="../../ja/nyangachi/coupon.html" hreflang="ja" lang="ja" title="日本語" aria-current="page">JA</a><a href="../../zh-tw/nyangachi/coupon.html" hreflang="zh-Hant" lang="zh-Hant" title="繁體中文">繁中</a></nav>
+</div></header>
+<main id="main"><div class="so-wrap so-doc so-coupon">
+    <p class="so-doc-back"><a href="../../ja/nyangachi/">← にゃんピラ育成</a></p>
+    <h1>クーポン入力</h1>
+    <p>クーポンコードを入力すると、報酬がゲームのメールボックスに届きます。</p>
+    <form id="cp" novalidate>
+      <label for="cp-id">会員番号</label>
+      <input id="cp-id" name="id" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="64" required>
+      <label for="cp-code">クーポンコード</label>
+      <input id="cp-code" name="code" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="16" placeholder="英数字4〜16文字" required>
+      <button class="so-press-btn" type="submit">受け取る</button>
+      <p id="cp-msg" class="so-coupon-msg" role="status" aria-live="polite"></p>
+    </form>
+    <h2>会員番号の確認方法</h2>
+    <ol><li>ゲームで設定を開き、「クーポン」をタップします。iPhoneでは「会員番号」です。</li><li>会員番号の横の「コピー」をタップして、上の欄に貼り付けます。</li></ol>
+    <ul class="so-doc-note"><li>クーポンは会員番号ごとに1回ずつ使えます。</li><li>ほかの人の番号を入力すると、その人に報酬が届きます。</li><li>Androidでは、ゲーム内の設定 → クーポンからも入力できます。</li></ul>
+</div></main>
+<script>
+(function () {
+  var DB = "https://firestore.googleapis.com/v1/projects/nyangachi-studiooct/databases/(default)/documents", M = {"bad_id": "会員番号をもう一度確認してください。ゲームでコピーした番号をそのまま貼り付けてください。", "bad_code": "コードは英数字4〜16文字です。", "ok": "クーポンを受け付けました！ゲームを再起動すると、報酬がメールボックスに届きます。", "used": "このクーポンは使用済みです。", "fail": "このクーポンは使えません。コードと期限を確認してください。すでに使ったクーポンかもしれません。", "net": "接続できませんでした。少ししてからもう一度お試しください。", "busy": "引き換え中…", "go": "受け取る"};
+  var f = document.getElementById("cp"), idIn = document.getElementById("cp-id"), codeIn = document.getElementById("cp-code"),
+      out = document.getElementById("cp-msg"), btn = f.querySelector("button");
+  try { idIn.value = localStorage.getItem("nyang_member") || ""; } catch (x) {}
+  function say(text, kind) { out.textContent = text; out.className = "so-coupon-msg" + (kind ? " is-" + kind : ""); }
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var id = idIn.value.replace(/\s+/g, ""), code = codeIn.value.replace(/\s+/g, "").toUpperCase();
+    if (!/^[A-Za-z0-9]{20,40}$/.test(id)) { say(M.bad_id, "bad"); idIn.focus(); return; }
+    if (!/^[A-Z0-9]{4,16}$/.test(code)) { say(M.bad_code, "bad"); codeIn.focus(); return; }
+    idIn.value = id; codeIn.value = code;
+    try { localStorage.setItem("nyang_member", id); } catch (x) {}
+    var name = DB.replace("https://firestore.googleapis.com/v1/", "") + "/redeem/" + id + "/codes/" + code;
+    var body = { writes: [{ update: { name: name, fields: {} }, currentDocument: { exists: false },
+      updateTransforms: [{ fieldPath: "t", setToServerValue: "REQUEST_TIME" }] }] };
+    btn.disabled = true; btn.textContent = M.busy; say("");
+    fetch(DB + ":commit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (r.ok) { say(M.ok, "ok"); codeIn.value = ""; return; }
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          var st = (j && j.error && j.error.status) || "";
+          if (r.status === 409 || st === "ALREADY_EXISTS") say(M.used, "bad");
+          else if (r.status === 400 || r.status === 403 || r.status === 404) say(M.fail, "bad");
+          else say(M.net, "bad");
+        });
+      }, function () { say(M.net, "bad"); })
+      .then(function () { btn.disabled = false; btn.textContent = M.go; });
+  });
+})();
+</script>
+
+<footer class="so-foot"><div class="so-parade" aria-hidden="true"><div class="so-wrap"><img src="../../img/nyang/pal-crew1.webp" alt=""><img src="../../img/nyang/pal-crew2.webp" alt=""><img src="../../img/nyang/pal-crew3.webp" alt=""><img src="../../img/nyang/pal-crew4.webp" alt=""><img src="../../img/nyang/pal-crew5.webp" alt=""></div></div><div class="so-wrap">
+  <nav aria-label="にゃんピラ育成"><b>にゃんピラ育成</b><a href="../../ja/nyangachi/">紹介</a><a href="../../ja/nyangachi/coupon.html">クーポン</a><a href="../../ja/nyangachi/privacy.html">プライバシーポリシー</a><a href="mailto:contact.studiooct@gmail.com">お問い合わせ</a></nav>
+  <nav aria-label="こつこつ社長"><b>こつこつ社長</b><a href="../../ja/startup/">紹介</a><a href="../../ja/faq.html">よくある質問</a><a href="../../ja/press-kit.html">プレスキット</a><a href="../../ja/probability.html">確率表記</a><a href="../../ja/privacy.html">プライバシーポリシー</a><a href="../../ja/support.html">お問い合わせ</a></nav>
+  <p>Studio Oct（스튜디오옥트）· 代表：Eunchong Hong · 事業者登録番号 844-57-01010<br>3F #368, 19 Dongho-ro 14-gil, Jung-gu, Seoul, Republic of Korea · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p>
+</div></footer>
+</body>
+</html>

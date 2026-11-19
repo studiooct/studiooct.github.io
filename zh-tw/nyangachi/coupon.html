@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>輸入序號 — 喵混混養成記</title>
+<meta name="description" content="輸入喵混混養成記的序號，獎勵會送到遊戲信箱。">
+<link rel="canonical" href="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Studio Oct">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<meta property="og:title" content="輸入序號 — 喵混混養成記">
+<meta property="og:description" content="輸入喵混混養成記的序號，獎勵會送到遊戲信箱。">
+<meta property="og:image" content="https://studiooct.github.io/img/nyang/feature.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFDF8">
+<link rel="icon" type="image/png" href="../../img/cat.png">
+<!-- i18n:hreflang -->
+<link rel="alternate" hreflang="ko" href="https://studiooct.github.io/nyangachi/coupon.html">
+<link rel="alternate" hreflang="en" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<link rel="alternate" hreflang="ja" href="https://studiooct.github.io/ja/nyangachi/coupon.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://studiooct.github.io/zh-tw/nyangachi/coupon.html">
+<link rel="alternate" hreflang="x-default" href="https://studiooct.github.io/en/nyangachi/coupon.html">
+<!-- /i18n:hreflang -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="../../site.css">
+</head>
+<body class="so-page">
+<a class="so-skip" href="#main">跳到主要內容</a>
+<header class="so-head"><div class="so-wrap so-head-row">
+  <a class="so-brand" href="../../zh-tw/">Studio Oct</a>
+  <nav class="so-nav" aria-label="menu"><a href="../../zh-tw/#games">遊戲</a><a href="../../zh-tw/#studio">工作室</a></nav>
+  <nav class="so-langs" aria-label="語言"><a href="../../nyangachi/coupon.html" hreflang="ko" lang="ko" title="한국어">KO</a><a href="../../en/nyangachi/coupon.html" hreflang="en" lang="en" title="English">EN</a><a href="../../ja/nyangachi/coupon.html" hreflang="ja" lang="ja" title="日本語">JA</a><a href="../../zh-tw/nyangachi/coupon.html" hreflang="zh-Hant" lang="zh-Hant" title="繁體中文" aria-current="page">繁中</a></nav>
+</div></header>
+<main id="main"><div class="so-wrap so-doc so-coupon">
+    <p class="so-doc-back"><a href="../../zh-tw/nyangachi/">← 喵混混養成記</a></p>
+    <h1>輸入序號</h1>
+    <p>輸入序號後，獎勵會送到遊戲信箱。</p>
+    <form id="cp" novalidate>
+      <label for="cp-id">會員編號</label>
+      <input id="cp-id" name="id" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="64" required>
+      <label for="cp-code">序號</label>
+      <input id="cp-code" name="code" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="16" placeholder="4～16 碼英數字" required>
+      <button class="so-press-btn" type="submit">兌換</button>
+      <p id="cp-msg" class="so-coupon-msg" role="status" aria-live="polite"></p>
+    </form>
+    <h2>如何查看會員編號</h2>
+    <ol><li>在遊戲中打開設定，點「序號」。iPhone 上是「會員編號」。</li><li>點會員編號旁的「複製」，貼到上面的欄位。</li></ol>
+    <ul class="so-doc-note"><li>每組序號限每個會員編號使用一次。</li><li>輸入別人的編號，獎勵就會送給那個人。</li><li>Android 也可以在遊戲內的設定 → 序號直接輸入。</li></ul>
+</div></main>
+<script>
+(function () {
+  var DB = "https://firestore.googleapis.com/v1/projects/nyangachi-studiooct/databases/(default)/documents", M = {"bad_id": "請再確認一次會員編號。把在遊戲中複製的編號直接貼上即可。", "bad_code": "序號須為 4～16 碼英數字。", "ok": "序號已兌換！重新開啟遊戲，獎勵就會送到信箱。", "used": "這組序號已經用過了。", "fail": "這組序號無法使用。請確認序號和期限，也可能已經用過了。", "net": "無法連線。請稍後再試一次。", "busy": "兌換中…", "go": "兌換"};
+  var f = document.getElementById("cp"), idIn = document.getElementById("cp-id"), codeIn = document.getElementById("cp-code"),
+      out = document.getElementById("cp-msg"), btn = f.querySelector("button");
+  try { idIn.value = localStorage.getItem("nyang_member") || ""; } catch (x) {}
+  function say(text, kind) { out.textContent = text; out.className = "so-coupon-msg" + (kind ? " is-" + kind : ""); }
+  f.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var id = idIn.value.replace(/\s+/g, ""), code = codeIn.value.replace(/\s+/g, "").toUpperCase();
+    if (!/^[A-Za-z0-9]{20,40}$/.test(id)) { say(M.bad_id, "bad"); idIn.focus(); return; }
+    if (!/^[A-Z0-9]{4,16}$/.test(code)) { say(M.bad_code, "bad"); codeIn.focus(); return; }
+    idIn.value = id; codeIn.value = code;
+    try { localStorage.setItem("nyang_member", id); } catch (x) {}
+    var name = DB.replace("https://firestore.googleapis.com/v1/", "") + "/redeem/" + id + "/codes/" + code;
+    var body = { writes: [{ update: { name: name, fields: {} }, currentDocument: { exists: false },
+      updateTransforms: [{ fieldPath: "t", setToServerValue: "REQUEST_TIME" }] }] };
+    btn.disabled = true; btn.textContent = M.busy; say("");
+    fetch(DB + ":commit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (r.ok) { say(M.ok, "ok"); codeIn.value = ""; return; }
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          var st = (j && j.error && j.error.status) || "";
+          if (r.status === 409 || st === "ALREADY_EXISTS") say(M.used, "bad");
+          else if (r.status === 400 || r.status === 403 || r.status === 404) say(M.fail, "bad");
+          else say(M.net, "bad");
+        });
+      }, function () { say(M.net, "bad"); })
+      .then(function () { btn.disabled = false; btn.textContent = M.go; });
+  });
+})();
+</script>
+
+<footer class="so-foot"><div class="so-parade" aria-hidden="true"><div class="so-wrap"><img src="../../img/nyang/pal-crew1.webp" alt=""><img src="../../img/nyang/pal-crew2.webp" alt=""><img src="../../img/nyang/pal-crew3.webp" alt=""><img src="../../img/nyang/pal-crew4.webp" alt=""><img src="../../img/nyang/pal-crew5.webp" alt=""></div></div><div class="so-wrap">
+  <nav aria-label="喵混混養成記"><b>喵混混養成記</b><a href="../../zh-tw/nyangachi/">介紹</a><a href="../../zh-tw/nyangachi/coupon.html">序號</a><a href="../../zh-tw/nyangachi/privacy.html">隱私權政策</a><a href="mailto:contact.studiooct@gmail.com">聯絡我們</a></nav>
+  <nav aria-label="小公司大老闆"><b>小公司大老闆</b><a href="../../zh-tw/startup/">介紹</a><a href="../../zh-tw/faq.html">常見問題</a><a href="../../zh-tw/press-kit.html">媒體資料</a><a href="../../zh-tw/probability.html">機率公告</a><a href="../../zh-tw/privacy.html">隱私權政策</a><a href="../../zh-tw/support.html">聯絡我們</a></nav>
+  <p>Studio Oct（스튜디오옥트）· 負責人：Eunchong Hong · 營業登記號碼 844-57-01010<br>3F #368, 19 Dongho-ro 14-gil, Jung-gu, Seoul, Republic of Korea · contact.studiooct@gmail.com</p><p>© 2026 Studio Oct</p>
+</div></footer>
+</body>
+</html>
