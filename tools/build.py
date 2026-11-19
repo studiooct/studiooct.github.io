@@ -19,7 +19,7 @@ import subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://studiooct.github.io/"
-OLD_HOME_COMMIT = "8f8677a"  # 예전 첫 화면(스타트업 키우기 소개)이 있던 마지막 커밋
+STARTUP_SRC = os.path.join(ROOT, "tools", "startup_src")  # 예전 첫 화면(스타트업 키우기 소개) 원본. 옛 저장소 커밋 8f8677a 의 {언어}index.html 을 2026-11-19 저장소 교체 때 옮겨 둠
 PLAY_STARTUP = "https://play.google.com/store/apps/details?id=com.ceogame.app&utm_source=homepage&utm_medium=referral&utm_campaign=studio_home_{c}&utm_content={where}"
 MAIL = "contact.studiooct@gmail.com"
 
@@ -643,8 +643,8 @@ def build_startup(lang):
     """예전 첫 화면(스타트업 키우기 소개)을 startup/ 아래로 옮긴다. 본문은 그대로, 주소와 머리·꼬리만 바꾼다."""
     v = LANGS[lang]
     d = 2 if v[0] else 1
-    src = subprocess.run(["git", "-C", ROOT, "show", f"{OLD_HOME_COMMIT}:{v[0]}index.html"],
-                         check=True, capture_output=True, text=True).stdout
+    with open(os.path.join(STARTUP_SRC, lang + ".html"), encoding="utf-8") as f:
+        src = f.read()
     old_url = SITE + v[0]
     # 1) 상대 주소를 한 칸 더 깊게
     def deeper(m):
@@ -682,7 +682,7 @@ def build_startup(lang):
     write(v[0] + "startup/index.html", out)
 
 
-OLD_DOCS_COMMIT = "870dafa"  # 옛 스타트업 문서(faq·press-kit·privacy·probability·support)의 본문을 가져오는 커밋
+# 옛 스타트업 문서(faq·press-kit·privacy·probability·support) 본문 원본은 tools/startup_src/docs/{언어}/ (옛 저장소 커밋 870dafa 에서 2026-11-19 옮겨 둠)
 OLD_DOCS = ["faq.html", "press-kit.html", "privacy.html", "probability.html", "support.html"]
 
 
@@ -692,8 +692,8 @@ def build_startup_doc(lang, page):
     v = LANGS[lang]
     d = 1 if v[0] else 0
     t = T[lang]
-    src = subprocess.run(["git", "-C", ROOT, "show", f"{OLD_DOCS_COMMIT}:{v[0]}{page}"],
-                         check=True, capture_output=True, text=True).stdout
+    with open(os.path.join(STARTUP_SRC, "docs", lang, page), encoding="utf-8") as f:
+        src = f.read()
     out = re.sub(r"<!-- i18n:langbar -->.*?<!-- /i18n:langbar -->\n?", "", src, flags=re.S)
     out = re.sub(r'<nav class="lang-bar".*?</nav>\n?', "", out, flags=re.S)
     back = '<p class="so-doc-back so-old-back"><a href="%s">← %s</a></p>' % (rel(d, v[0] + "startup/"), e(t["startup"]))
